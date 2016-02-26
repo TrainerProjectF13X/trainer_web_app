@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title%}Login{%endblock%}
+
+{% block id %}login{% endblock%}
+
+{% block content%}
+<h1>
+  Train hard, train smarter (blah blah).
+</h1>
+{% if form.non_field_errors %}
+  <ul class='form-errors'>
+    {% for error in form.non_field_errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+<form  action="login" method="post">
+  {%csrf_token%}
+  {% for field in form %}
+  <div class="fieldWrapper">
+    {{ field.label_tag }} {{ field }}
+    {{ field.errors }}
+    <p></p>
+  </div>
+  {% endfor %}
+  <p><input type="submit" value="Login"></p>
+</form>
+<a href="{% url 'sign_up' %}">Join Today</a>
+{% endblock%}

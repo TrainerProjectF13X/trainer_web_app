@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title%}Login{%endblock%}
+
+{% block id %}login{% endblock%}
+
+{% block content%}
+{{ user_info }}
+<a href="{% url 'logout' %}">Logout</a>
+{% endblock%}
