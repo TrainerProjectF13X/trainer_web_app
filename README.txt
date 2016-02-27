@@ -27,5 +27,18 @@ Now run the following, still in the same directory.
 
 >>pip install -r requirements.txt
 
+If you get and error like this run the following command 
+
+Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-44VQfW
+/psycopg2/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n')
+, __file__, 'exec'))" install --record /tmp/pip-46Ysyb-record/install-record.txt 
+--single-version-externally-managed --compile" failed with error code 1 in /tmp/pip-build-44VQfW/psycopg
+
+
+
+>>sudo apt-get install libpq-dev python-dev
+And then retry.
+
+
 This should install all the dependencies needed in order to run the project. 
 If you add any please update the file accordingly.
