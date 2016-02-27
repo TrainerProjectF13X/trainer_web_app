@@ -22,14 +22,12 @@ def route(request, current_user):
         regular_user = current_user.regularaccount
         serialized_data = RegularSerialzer(regular_user).data
         return render(request, 'user/profile.html', {'user_info' : serialized_data})
-        #return JsonResponse(serialized_data)
     except ObjectDoesNotExist:
         pass
     try:
         trainer_user = current_user.traineraccount
         serialized_data = TrainerSerialzer(trainer_user).data
         return render(request, 'user/profile.html', {'user_info' : serialized_data})
-        #return JsonResponse(serialized_data)
     except ObjectDoesNotExist:
         pass
 
