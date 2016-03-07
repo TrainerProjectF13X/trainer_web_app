@@ -66,6 +66,9 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 ------------------------------------------------
 
 #Install NPM and Node
+
+  Deactivate the VirtualEnv if you are inside virtualenv
+
 1. Install HomeBrew
 
   $/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -74,8 +77,15 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
   $brew node
 
+*NOW STEP BACK TO THE VIRTUAL ENV& cd the the project folder*
 3. Use NPM to Install pakcages
-  
+
+   * $npm init
+   * $npm install
+4. Compile 
+
+  *./node_modules/.bin/webpack --config webpack.config.js
+  *[WIth WATCH]./node_modules/.bin/webpack --config webpack.config.js --watch
 
 ===============================================================================================
 If you get and error like this run the following command 
