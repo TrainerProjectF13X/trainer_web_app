@@ -4,10 +4,12 @@
 #Set up Django
 
 1. Install PIP
-..* *$easy_install pip*
+
+ *$easy_install pip*
 
 2. Install VirtualEVN via PIP
-..* *$pip install virtualenv*
+
+ *$pip install virtualenv*
 
 
 #Set up dependencies whithin the virtual enviroment
@@ -47,11 +49,16 @@ Now run the following, still in the same directory.
 
 
 4. Migrate the database
-*$python manage.py makemigrations
-*$python manage.py migrate
+  *$python manage.py makemigrations
+  *$python manage.py migrate
+
 
 5. runserver
-..* *$python manage.py runserver*
+
+*$python manage.py runserver*
+
+
+
 ===============================================================================================
 If you get and error like this run the following command 
 
@@ -62,7 +69,7 @@ Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-b
 
 
 
->>sudo apt-get install libpq-dev python-dev
+*$sudo apt-get install libpq-dev python-dev*
 And then retry.
 
 
