@@ -25,7 +25,6 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 1. Configure the virtual environment
 
   *$sudo virtualenv -p [path to python3.4.x] [path to cloned repo]*
-
   Eg. sudo virtualenv -p python3 .
 
 
@@ -42,13 +41,14 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 
 4. Migrate the database
+
   *$python manage.py makemigrations*
   *$python manage.py migrate*
 
 
 5. runserver
 
-*$python manage.py runserver*
+  *$python manage.py runserver*
 
 
 
