@@ -4,12 +4,10 @@
 #Set up Django
 
 1. Install PIP
-
- *$easy_install pip*
+  *$easy_install pip*
 
 2. Install VirtualEVN via PIP
-
- *$pip install virtualenv*
+  *$pip install virtualenv*
 
 
 #Set up dependencies whithin the virtual enviroment
@@ -24,33 +22,28 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 ##Start the virtual Env
 
-1.In order to do so run the following command:
+1. Configure the virtual environment
 
-*$sudo virtualenv -p [path to python3.4.x] [path to cloned repo]*
+  *$sudo virtualenv -p [path to python3.4.x] [path to cloned repo]*
 
-Eg. sudo virtualenv -p python3 .
+  Eg. sudo virtualenv -p python3 .
 
 
-2. Now change your directory into the cloned repository.
+2. Now change your directory into the cloned repository and activate the virtual environment
 
-Now in order to run this project for the first time type into 
-the command line the following:
-
-*$source bin/activate*
+  *$source bin/activate*
 
 
 
-3. Running this command should have changed your terminal prompt, and you
-should now be in the virtual enviroment.
+3. you should obsever in are in a virtual environment, install all dependencies via following command
 
-Now run the following, still in the same directory.
 
-* $pip install -r requirements.txt *
+  *$pip install -r requirements.txt*
 
 
 4. Migrate the database
-  *$python manage.py makemigrations
-  *$python manage.py migrate
+  *$python manage.py makemigrations*
+  *$python manage.py migrate*
 
 
 5. runserver
@@ -69,8 +62,8 @@ Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-b
 
 
 
-*$sudo apt-get install libpq-dev python-dev*
-And then retry.
+  *$sudo apt-get install libpq-dev python-dev*
+  And then retry.
 
 
 This should install all the dependencies needed in order to run the project. 
