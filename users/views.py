@@ -9,7 +9,7 @@ from .models import TrainerAccount, RegularAccount
 from django.contrib.auth import authenticate, login, logout
 from django.core.exceptions import ObjectDoesNotExist
 from .api.serializer import TrainerSerialzer, RegularSerialzer
-
+from rest_framework.renderers import JSONRenderer
 # Create your views here.
 
 def index(request):
@@ -21,15 +21,15 @@ def route(request, current_user):
     try:
         regular_user = current_user.regularaccount
         serialized_data = RegularSerialzer(regular_user).data
-        return render(request, 'user/profile.html', {'user_info' : serialized_data})
-        #return JsonResponse(serialized_data)
+        json = JSONRenderer().render(serialized_data)
+        return render(request, 'user/profile.html', {'user_info' : json})
     except ObjectDoesNotExist:
         pass
     try:
         trainer_user = current_user.traineraccount
         serialized_data = TrainerSerialzer(trainer_user).data
-        return render(request, 'user/profile.html', {'user_info' : serialized_data})
-        #return JsonResponse(serialized_data)
+        json = JSONRenderer().render(serialized_data)
+        return render(request, 'user/profile.html', {'user_info' : json})
     except ObjectDoesNotExist:
         pass
 
@@ -82,3 +82,6 @@ def sign_up(request):
 def logout_user(request):
     logout(request)
     return render(request, 'user/index.html')
+
+def public_profile_page(request, id):
+    return HttpResponse("HERE")
