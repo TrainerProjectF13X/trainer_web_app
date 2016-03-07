@@ -26,3 +26,10 @@ class TrainerSerialzer(serializers.ModelSerializer):
     class Meta:
         model = TrainerAccount
         fields = ('id','level','auth_token','user', 'clients')
+
+
+class ClientSerialzer(serializers.ModelSerializer):
+    clients = RegularUserViewSerialer(many=True, read_only=True)
+    class Meta:
+        model = TrainerAccount
+        fields = ('clients',)

@@ -19,6 +19,7 @@ export default class LandingPage extends React.Component {
         this.setState({curElement : index});
     }
     render(){
+        console.log(this.state.curUser);
         var sideBarEle = this.state.sideBarContents.map(function(ele, i){
             var boundClick = this.onSideBarClick.bind(this,i);
             return(<SideBarEle text={ele} onClick={boundClick} curElement={this.state.curElement} key={i} eleIndex ={i}/>);
