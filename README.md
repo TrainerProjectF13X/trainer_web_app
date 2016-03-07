@@ -43,7 +43,7 @@ should now be in the virtual enviroment.
 
 Now run the following, still in the same directory.
 
->>pip install -r requirements.txt
+$pip install -r requirements.txt
 
 
 4. Migrate the database
