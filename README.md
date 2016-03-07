@@ -43,6 +43,17 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 
 4. Migrate the database
+  For a working copy, you can simply use a sqllite Database instead of Postgre by replacing the code of database in setting.py by the following
+
+
+            
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            }
+        }
+
 
   *$python manage.py makemigrations*
   *$python manage.py migrate*
