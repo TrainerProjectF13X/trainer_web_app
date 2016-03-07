@@ -84,8 +84,8 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
    * $npm install
 4. Compile 
 
-  *./node_modules/.bin/webpack --config webpack.config.js
-  *[WIth WATCH]./node_modules/.bin/webpack --config webpack.config.js --watch
+   *./node_modules/.bin/webpack --config webpack.config.js
+   *[WIth WATCH]./node_modules/.bin/webpack --config webpack.config.js --watch
 
 ===============================================================================================
 If you get and error like this run the following command 
