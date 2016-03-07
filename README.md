@@ -50,7 +50,18 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
   *$python manage.py runserver*
 
+------------------------------------------------
 
+#Install NPM and Node
+1. Install HomeBrew
+
+  $/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+2. Install Node
+  $brew node
+
+3. Use NPM to Install pakcages
+  
 
 ===============================================================================================
 If you get and error like this run the following command 
