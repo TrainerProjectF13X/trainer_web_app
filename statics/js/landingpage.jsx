@@ -10,16 +10,15 @@ export default class LandingPage extends React.Component {
       super(props);
       this.state = { curUser : props.profile_info.data,
                     curElement : 0,
-                    sideBarContents : (props.profile_info.data === "TRAINER") ?
+                    sideBarContents : (props.profile_info.data.level === "TRAINER") ?
                     ["My Profile", "My Trainees", "Calendar","Saved Workouts", "Trainee Nearby", "Settings"] :
-                    ["My Profile", "Calendar","Saved Workouts", "Trainee Nearby", "Settings"]};
+                    ["My Profile", "Calendar","Saved Workouts", "Settings"]};
 
     }
     onSideBarClick(index){
         this.setState({curElement : index});
     }
     render(){
-        console.log(this.state.curElement);
         var sideBarEle = this.state.sideBarContents.map(function(ele, i){
             var boundClick = this.onSideBarClick.bind(this,i);
             return(<SideBarEle text={ele} onClick={boundClick} curElement={this.state.curElement} key={i} eleIndex ={i}/>);
