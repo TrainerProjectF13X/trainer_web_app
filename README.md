@@ -76,13 +76,13 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 2. Install Node
 
   $brew node
-
+---------------------------------------------------
 *NOW STEP BACK TO THE VIRTUAL ENV& cd the the project folder*
+
 3. Use NPM to Install pakcages
 
    * $npm init
    * $npm install
-
 
 4. Compile 
 
