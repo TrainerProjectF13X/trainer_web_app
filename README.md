@@ -4,9 +4,11 @@
 #Set up Django
 
 1. Install PIP
+
   *$easy_install pip*
 
 2. Install VirtualEVN via PIP
+
   *$pip install virtualenv*
 
 
@@ -58,6 +60,7 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
   $/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 2. Install Node
+
   $brew node
 
 3. Use NPM to Install pakcages
