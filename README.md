@@ -4,10 +4,10 @@
 #Set up Django
 
 1. Install PIP
-$easy_install pip
+..* *$easy_install pip*
 
 2. Install VirtualEVN via PIP
-$pip install virtualenv
+..* *$pip install virtualenv*
 
 
 #Set up dependencies whithin the virtual enviroment
@@ -24,7 +24,7 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 1.In order to do so run the following command:
 
-$sudo virtualenv -p [path to python3.4.x] [path to cloned repo] 
+*$sudo virtualenv -p [path to python3.4.x] [path to cloned repo]*
 
 Eg. sudo virtualenv -p python3 .
 
@@ -34,7 +34,7 @@ Eg. sudo virtualenv -p python3 .
 Now in order to run this project for the first time type into 
 the command line the following:
 
-$source bin/activate
+*$source bin/activate*
 
 
 
@@ -43,7 +43,7 @@ should now be in the virtual enviroment.
 
 Now run the following, still in the same directory.
 
-$pip install -r requirements.txt
+* $pip install -r requirements.txt *
 
 
 4. Migrate the database
@@ -51,7 +51,7 @@ $pip install -r requirements.txt
 *$python manage.py migrate
 
 5. runserver
-$python manage.py runserver
+..* *$python manage.py runserver*
 ===============================================================================================
 If you get and error like this run the following command 
 
