@@ -4,4 +4,4 @@ django-filter==0.12.0
 djangorestframework==3.3.2
 Markdown==2.6.5
 six==1.10.0
-wheel==0.29.0i  
+wheel==0.29.0 
