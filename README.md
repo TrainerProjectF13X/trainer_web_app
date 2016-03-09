@@ -65,9 +65,11 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
   *$python manage.py makemigrations*
   *$python manage.py migrate*
 
-
 5. runserver
-   * *$python manage.py runserver*
+
+  * *$python manage.py runserver*
+  
+
 ======================================================================
 
 #Webpack compiler configuration(via npm)
@@ -78,10 +80,15 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
    * $/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 2. Install Node
-   * $brew node
+   * $Brew node
+
+   
+
 ---------------------------------------------------
 *NOW STEP BACK TO THE VIRTUAL ENV& cd the the project folder*
 --------------------------------------------------
+
+
 
 3. Use NPM to Install pakcages
 
