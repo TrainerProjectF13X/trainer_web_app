@@ -239,11 +239,11 @@
 	        value: function render() {
 	            var display;
 	            if (this.props.curContent === "My Profile") {
-	                display = React.createElement(_profile2.default, null);
+	                display = React.createElement(_profile2.default, { profile_info: this.props.curUser });
 	            } else if (this.props.curContent == "My Trainees") {
 	                var clients = this.props.curUser.clients;
 	                var token = this.props.curUser.auth_token;
-	                display = React.createElement(_mytrainees2.default, { curClients: clients, token: token, pollInterval: 2000 });
+	                display = React.createElement(_mytrainees2.default, { curClients: clients, token: token, pollInterval: 6000 });
 	            } else if (this.props.curContent == "Calendar") {
 	                display = React.createElement(_calendar2.default, null);
 	            } else if (this.props.curContent == "Saved Workouts") {
@@ -300,11 +300,43 @@
 	    _createClass(Profile, [{
 	        key: 'render',
 	        value: function render() {
-	            return React.createElement(
-	                'h1',
+	            var level = this.props.profile_info.level;
+	            var profile_pic = React.createElement('img', { src: level, alt: 'Profile Pic' });
+	            var profile = React.createElement(
+	                'p',
 	                null,
-	                'Profile Page'
+	                this.props.profile_info.profile,
+	                'this is supposed to be profile'
 	            );
+	            if (level === "TRAINER") {
+	                var pastExperience = React.createElement(
+	                    'p',
+	                    null,
+	                    this.props.profile_info.past_experience,
+	                    ' this is supposed to be past experience'
+	                );
+	                return React.createElement(
+	                    'div',
+	                    null,
+	                    profile_pic,
+	                    profile,
+	                    pastExperience
+	                );
+	            } else {
+	                var goal = React.createElement(
+	                    'p',
+	                    null,
+	                    this.props.profile_info.goal,
+	                    ' this is supposed to be goal'
+	                );
+	                return React.createElement(
+	                    'div',
+	                    null,
+	                    profile_pic,
+	                    profile,
+	                    goal
+	                );
+	            }
 	        }
 	    }]);
 
