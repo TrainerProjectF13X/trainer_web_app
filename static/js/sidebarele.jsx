@@ -6,7 +6,6 @@ export default class SideBarEle extends React.Component {
       super(props);
 
     }
-
     render(){
         var eleClass = "";
         if(this.props.eleIndex === this.props.curElement){
@@ -17,7 +16,7 @@ export default class SideBarEle extends React.Component {
         }
 
         return (
-            <p><a className={eleClass} onClick={this.props.onClick}>{this.props.text}</a></p>
+            <li><a className={eleClass} onClick={this.props.onClick}>{this.props.text}</a></li>
         );
     }
 }

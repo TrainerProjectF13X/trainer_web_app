@@ -7,7 +7,7 @@
 
 {% block content%}
 
-<script type="text/javascript" src="{% static 'bundle.js' %}"></script>
+<script type="text/javascript" src="{% static 'bundles/bundle.js' %}"></script>
 <script type="text/javascript">
 var user_data = JSON.parse('{{user_info|escapejs}}');
 window.MyApp.init({data : user_data});

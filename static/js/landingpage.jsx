@@ -18,6 +18,10 @@ export default class LandingPage extends React.Component {
     onSideBarClick(index){
         this.setState({curElement : index});
     }
+    componentDidMount(){
+        $(".button-collapse").sideNav();
+        $('.collapsible').collapsible();
+    }
     render(){
         console.log(this.state.curUser);
         var sideBarEle = this.state.sideBarContents.map(function(ele, i){
@@ -26,45 +30,32 @@ export default class LandingPage extends React.Component {
         },this);
         var contentDisplay = <Content curContent={this.state.sideBarContents[this.state.curElement]} curUser={this.state.curUser}/>
         return (
+            <header>
             <div>
                 <div className="side-bar-parent">
-                    {sideBarEle}
+                    <ul id="nav-mobile" className="side-nav fixed">
+                        {sideBarEle}
+                    </ul>
                 </div>
                 <div className="content-panel-parent">
+                <main>
+
+                <nav>
+                <div className="nav-wrapper grey darken-4">
+                  <a href="#" className="brand-logo right">F13X</a>
+                  <ul id="nav-mobile" className="right hide-on-med-and-down">
+                  </ul>
+                </div>
+              </nav>
+                <div className="container">
+                  <div className="row">
                     {contentDisplay}
+                    </div>
+                    </div>
+                    </main>
                 </div>
             </div>
+            </header>
         );
     }
 }
-
-//ReactDOM.render(<Hello />, document.getElementById('container'));
-/*
-var backgrounds = this.props.image_paths.map(function(image_path, i) {
-  var divStyle = {backgroundImage: 'url(' + image_path + ')'};
-  return(
-    <div className = "ImageWrapper" key={i} style={divStyle}> &nbsp;
-      <InfoBoxText id_num={i} pages={this.props.image_paths.length} />
-    </div>
-  )
-},this);
-var navbar = this.props.nav_elements.map(function(nav_ele, i) {
-  return <Navbar data={nav_ele} key={i}  />;
-},this);
-
-<div>
-    <SideBar />
-</div>
-<div>
-    {cur_page}
-</div>
-
-
-if(this.props.profile_info.data.level === "TRAINER"){
-    this.state = { sideBarContents : ["My Profile", "My Trainees", "Calendar","Save Workouts", "Trainee Nearby", "Settings"] };
-}
-else{
-    this.state = { sideBarContents : ["My Profile", "Calendar","Save Workouts", "Trainee Nearby", "Settings"]};
-}
-
-*/

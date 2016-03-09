@@ -38,7 +38,7 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),
-    
+
 }
 
 MIDDLEWARE_CLASSES = [
@@ -128,5 +128,5 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     #This lets Django's collectstatic store our bundles
-    os.path.join(BASE_DIR, 'statics/bundles/'),
+    os.path.join(BASE_DIR, 'static'),
 )
