@@ -102,7 +102,10 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 
 ===============================================================================================
-If you get and error like this run the following command 
+
+#Possible configuration erros
+
+###If you get and error like this run the following command 
 
 Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-build-44VQfW
 /psycopg2/setup.py';exec(compile(getattr(tokenize, 'open', open)(__file__).read().replace('\r\n', '\n')
@@ -117,4 +120,7 @@ Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-b
 
 This should install all the dependencies needed in order to run the project. 
 If you add any please update the file accordingly.
+### Permission erros
 
+* Please add sudo to commands like pip install -r requirments if encounter a permission error
+* Be aware of of the fact that sudo is going to change the file permission setting
