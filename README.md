@@ -1,8 +1,8 @@
 #General
 
-  1. The first part of readme covers how to set up the django virtual environemnt and local host
-  2. The second part of the readme goes into detail how to configure the webpack to compile JSX files (for React.jS)
-  3. The last part describes some configuration erros one might encounter
+  1. The first part of readme covers how to set up the Django virtual environment and local host
+  2. The second part of the readme goes into detail on how to configure the Webpack to compile JSX files (for React)
+  3. The last part describes some configuration errors one might encounter
 
 
 =====================================================================================================
@@ -14,12 +14,12 @@
 
   *$easy_install pip*
 
-2. Install VirtualEVN via PIP
+2. Install Virtual environment via PIP
 
   *$pip install virtualenv*
 
 
-###Set up dependencies whithin the virtual enviroment
+###Set up dependencies within the virtual environment
 
 The following README assumes that you have virtualenv and python 3.4.x installed.
 In this README.txt the following symbol, >>, denotes command line input.
@@ -43,7 +43,7 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 
 
-3. you should obsever in are in a virtual environment, install all dependencies via following command
+3. you should observe you are in a virtual environment, install all dependencies via following command
 
 
   *$pip install -r requirements.txt*
@@ -72,7 +72,7 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 ======================================================================
 
-#Webpack compiler configuration(via npm)
+#Webpack compiler configuration (via npm)
 
   Deactivate the VirtualEnv if you are inside virtualenv
 
@@ -90,7 +90,7 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 
 
-3. Use NPM to Install pakcages
+3. Use NPM to Install packages
 
    * $npm init
    * $npm install
@@ -103,7 +103,7 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 ===============================================================================================
 
-#Possible configuration erros
+#Possible configuration errors
 
 ###If you get and error like this run the following command 
 
