@@ -62,8 +62,9 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
         }
 
 
-  *$python manage.py makemigrations*
-  *$python manage.py migrate*
+  * *$python manage.py makemigrations*
+  * 
+  * *$python manage.py migrate*
 
 5. runserver
 
@@ -85,7 +86,7 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
    
 
 ---------------------------------------------------
-*NOW STEP BACK TO THE VIRTUAL ENV& cd the the project folder*
+##### *NOW STEP BACK TO THE VIRTUAL ENV& cd the the project folder*
 --------------------------------------------------
 
 
