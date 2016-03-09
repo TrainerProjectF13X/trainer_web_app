@@ -1,7 +1,14 @@
+#General
+
+  1. The first part of readme covers how to set up the django virtual environemnt and local host
+  2. The second part of the readme goes into detail how to configure the webpack to compile JSX files (for React.jS)
+  3. The last part describes some configuration erros one might encounter
 
 
+=====================================================================================================
+#Running the virtual environment/local server
 
-#Set up Django
+###Set up Django
 
 1. Install PIP
 
@@ -12,17 +19,17 @@
   *$pip install virtualenv*
 
 
-#Set up dependencies whithin the virtual enviroment
+###Set up dependencies whithin the virtual enviroment
 
 The following README assumes that you have virtualenv and python 3.4.x installed.
 In this README.txt the following symbol, >>, denotes command line input.
 
-## Clone the repo
+###Clone the repo
 The first step is to clone the repository from the following address:
 https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 
-##Start the virtual Env
+###Start the virtual Env
 
 1. Configure the virtual environment
 
@@ -60,24 +67,21 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 
 5. runserver
+   * *$python manage.py runserver*
+======================================================================
 
-  *$python manage.py runserver*
-
-------------------------------------------------
-
-#Install NPM and Node
+#Webpack compiler configuration(via npm)
 
   Deactivate the VirtualEnv if you are inside virtualenv
 
 1. Install HomeBrew
-
-  $/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+   * $/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 2. Install Node
-
-  $brew node
+   * $brew node
 ---------------------------------------------------
 *NOW STEP BACK TO THE VIRTUAL ENV& cd the the project folder*
+--------------------------------------------------
 
 3. Use NPM to Install pakcages
 
@@ -88,6 +92,7 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
    * ./node_modules/.bin/webpack --config webpack.config.js
    * [WIth WATCH]./node_modules/.bin/webpack --config webpack.config.js --watch
+
 
 ===============================================================================================
 If you get and error like this run the following command 
@@ -105,3 +110,4 @@ Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-b
 
 This should install all the dependencies needed in order to run the project. 
 If you add any please update the file accordingly.
+
