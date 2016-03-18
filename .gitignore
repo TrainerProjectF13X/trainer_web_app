@@ -5,3 +5,4 @@ pip-selfcheck.json
 *.pyc
 node_modules/
 db.sqlite3
+*.DS_Store
