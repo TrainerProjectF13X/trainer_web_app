@@ -12,7 +12,7 @@ class RegularSerialzer(serializers.ModelSerializer):
     user = UserSerializer()
     class Meta:
         model = RegularAccount
-        fields = ('id','level','auth_token', 'trainer','user')
+        fields = ('id','level','auth_token', 'trainer','user','goal','profile_pic')
 
 class RegularUserViewSerialer(serializers.ModelSerializer):
     user = UserSerializer()
@@ -25,7 +25,7 @@ class TrainerSerialzer(serializers.ModelSerializer):
     clients = RegularUserViewSerialer(many=True, read_only=True)
     class Meta:
         model = TrainerAccount
-        fields = ('id','level','auth_token','user', 'clients')
+        fields = ('id','level','auth_token','user', 'clients','pastExperience','profile_pic')
 
 
 class ClientSerialzer(serializers.ModelSerializer):

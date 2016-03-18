@@ -18,7 +18,7 @@ export default class Content extends React.Component {
     render(){
         var display;
         if(this.props.curContent === "My Profile"){
-            display = <Profile />;
+            display = <Profile profile_info={this.props.curUser}/>;
         }
         else if (this.props.curContent == "My Trainees"){
             var clients = this.props.curUser.clients;
