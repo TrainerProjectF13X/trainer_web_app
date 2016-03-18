@@ -4,3 +4,4 @@ lib/
 pip-selfcheck.json
 *.pyc
 node_modules/
+db.sqlite3
