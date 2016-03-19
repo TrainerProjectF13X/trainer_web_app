@@ -8,17 +8,33 @@ import SideBarEle from './sidebarele.jsx'
 export default class LandingPage extends React.Component {
     constructor(props) {    /* Note props is passed into the constructor in order to be used */
       super(props);
-      this.state = { curUser : props.profile_info.data,
-                    curElement : 0,
-                    sideBarContents : (props.profile_info.data.level === "TRAINER") ?
-                    ["My Profile", "My Trainees", "Calendar","Saved Workouts", "Trainee Nearby", "Settings"] :
-                    ["My Profile", "Calendar","Saved Workouts", "Settings"]};
-
+      this.getUserInfo();
+    }
+    getUserInfo(){
+        $.ajax
+        ({
+          type : "GET",
+          url : "/api/get_user",
+          dataType: 'json',
+          async: false,
+          success : function( recv_data ){
+              console.log("HERE");
+              this.state = { curUser : recv_data,
+                            curElement : 0,
+                            sideBarContents : (recv_data.level === "TRAINER") ?
+                            ["My Profile", "My Trainees", "Calendar","Saved Workouts", "Trainee Nearby", "Settings"] :
+                            ["My Profile", "Calendar","Saved Workouts", "Settings"]};
+          }.bind(this),
+          error: function(xhr, status, err) {
+              console.error( status, err.toString());
+          }.bind(this)
+        });
     }
     onSideBarClick(index){
         this.setState({curElement : index});
     }
     componentDidMount(){
+
     }
     render(){
         console.log(this.state.curUser);

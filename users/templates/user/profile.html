@@ -1,16 +1,12 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load render_bundle from webpack_loader %}
 {% block title%}Profile{%endblock%}
 
 {% block id %}landing-page{% endblock%}
 
 
 {% block content%}
-
-<script type="text/javascript" src="{% static "bundles/bundle.js" %}"></script>
-<script type="text/javascript">
-var user_data = JSON.parse('{{user_info|escapejs}}');
-window.MyApp.init({data : user_data});
-</script>
+{% render_bundle 'main' %}
 <a href="{% url 'logout' %}">Logout</a>
 {% endblock%}

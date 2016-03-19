@@ -17,28 +17,10 @@ def index(request):
         return HttpResponseRedirect(reverse('profile_page', args=(request.user.id,)))
     return render(request, 'user/index.html')
 
-def route(request, current_user):
-    try:
-        regular_user = current_user.regularaccount
-        serialized_data = RegularSerialzer(regular_user).data
-        json = JSONRenderer().render(serialized_data)
-        return render(request, 'user/profile.html', {'user_info' : json})
-    except ObjectDoesNotExist:
-        pass
-    try:
-        trainer_user = current_user.traineraccount
-        serialized_data = TrainerSerialzer(trainer_user).data
-        json = JSONRenderer().render(serialized_data)
-        return render(request, 'user/profile.html', {'user_info' : json})
-    except ObjectDoesNotExist:
-        pass
-
-    return HttpResponse("Error Should Never Get Here")
-
 def profile_page(request, id):
     current_user = request.user
     if current_user.is_authenticated() and (str(id) == str(current_user.id)):
-        return route(request,current_user)
+        return render(request, 'user/profile.html')
     return redirect('login')
 
 def user_login(request):

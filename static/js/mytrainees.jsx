@@ -29,7 +29,6 @@ export default class CurrentTrainees extends React.Component {
                 console.error( status, err.toString());
             }.bind(this)
         });
-        console.log("HERE");
     }
     render(){
         return (
