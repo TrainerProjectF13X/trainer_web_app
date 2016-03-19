@@ -8,7 +8,7 @@ export default class CurrentTrainees extends React.Component {
                     token: this.props.token};
 
     }
-    componentDidMount() {
+    componentDidMount(){
         this.internval = setInterval(this.updateClients.bind(this), this.props.pollInterval);
     }
     componentWillUnmount(){
