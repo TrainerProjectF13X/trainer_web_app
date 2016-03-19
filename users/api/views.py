@@ -1,5 +1,5 @@
 from django.http import JsonResponse, HttpResponse
-from .serializer import ClientSerialzer, TrainerSerialzer
+from .serializer import ClientSerialzer, TrainerSerialzer, RegularSerialzer
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.renderers import JSONRenderer
 from django.shortcuts import render

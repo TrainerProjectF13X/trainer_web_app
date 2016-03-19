@@ -23,7 +23,7 @@ export default class LandingPage extends React.Component {
                             curElement : 0,
                             sideBarContents : (recv_data.level === "TRAINER") ?
                             ["My Profile", "My Trainees", "Calendar","Saved Workouts", "Trainee Nearby", "Settings"] :
-                            ["My Profile", "Calendar","Saved Workouts", "Settings"]};
+                            ["My Profile","Calendar","Saved Workouts", recv_data.trainer === null ?  "Find Trainer" : "Trainer Feedback" ,"Settings"]};
           }.bind(this),
           error: function(xhr, status, err) {
               console.error( status, err.toString());
@@ -56,6 +56,7 @@ export default class LandingPage extends React.Component {
 
                 <nav>
                 <div className="nav-wrapper grey darken-4">
+                  <a href="/users/logout_user">Logout</a>
                   <a href="#" className="brand-logo right">F13X</a>
                   <ul id="nav-mobile" className="right hide-on-med-and-down">
                   </ul>
