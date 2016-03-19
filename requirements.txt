@@ -6,3 +6,4 @@ Markdown==2.6.5
 psycopg2==2.6.1
 six==1.10.0
 wheel==0.29.0
+Pillow==3.1.1
