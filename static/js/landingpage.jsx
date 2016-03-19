@@ -19,8 +19,6 @@ export default class LandingPage extends React.Component {
         this.setState({curElement : index});
     }
     componentDidMount(){
-        $(".button-collapse").sideNav();
-        $('.collapsible').collapsible();
     }
     render(){
         console.log(this.state.curUser);

@@ -9,7 +9,7 @@ export default class Profile extends React.Component {
 
     render(){
         var level = this.props.profile_info.level
-        var profile_pic = <img src={level} alt="Profile Pic"></img>
+        var profile_pic = <img src="" alt="Profile Pic"></img>
         var profile = <p>{this.props.profile_info.profile}this is supposed to be profile</p>
         if(level === "TRAINER"){
             var pastExperience = <p>{this.props.profile_info.past_experience} this is supposed to be past experience</p>

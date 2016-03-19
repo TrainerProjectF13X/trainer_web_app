@@ -57,7 +57,7 @@ ROOT_URLCONF = 'trainerproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/christopher/django-projects/trainerproject/users/templates'],
+        'DIRS': [os.path.join(BASE_DIR, 'users/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
