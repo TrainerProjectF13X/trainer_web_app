@@ -1,6 +1,6 @@
 bin/
 include/
-lib/
+/lib/
 pip-selfcheck.json
 *.pyc
 node_modules/
