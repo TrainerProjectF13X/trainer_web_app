@@ -20,18 +20,18 @@
     {% for field in form %}
     {% if field != form.choice_field%}
         <div class="fieldWrapper">
-          {{ field.label_tag }} {{ field }}
-          {{ field.errors }}
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
           <p></p>
         </div>
     {% else%}
+        {{ field.errors }}
         {% for radio in form.choice_field %}
             <div class="radioButton">
                 {{ radio.tag }}
                 <label for="{{ radio.id_for_label }}"> {{ radio.choice_label }}</label>
             </div>
         {% endfor %}
-        {{ field.errors }}
     {% endif%}
     {% endfor %}
   <p><input type="submit" value="Sign Up"></p>

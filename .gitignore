@@ -9,3 +9,4 @@ db.sqlite3
 __pycache__
 static/bundles/bundle.js
 webpack-stats.json
+users/migrations
