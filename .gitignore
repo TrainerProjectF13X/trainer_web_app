@@ -6,3 +6,6 @@ pip-selfcheck.json
 node_modules/
 db.sqlite3
 *.DS_Store
+__pycache__
+webpack-stats.json
+static/bundles/bundle.js

@@ -8,11 +8,11 @@ module.exports = {
     //the entry point we created earlier. Note that './' means
     //your current directory. You don't have to specify the extension  now,
     //because you will specify extensions later in the `resolve` section
-    entry: './statics/js/index',
+    entry: './static/js/index',
 
     output: {
         //where you want your compiled bundle to be stored
-        path: path.resolve('./statics/bundles/'),
+        path: path.resolve('./static/bundles/'),
         //naming convention webpack should use for your files
         filename: 'bundle.js',
     },
