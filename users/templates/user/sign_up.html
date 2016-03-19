@@ -16,14 +16,24 @@
   </ul>
 {% endif %}
 <form  action="sign_up" method="post">
-  {%csrf_token%}
-  {% for field in form %}
-  <div class="fieldWrapper">
-    {{ field.label_tag }} {{ field }}
-    {{ field.errors }}
-    <p></p>
-  </div>
-  {% endfor %}
+    {%csrf_token%}
+    {% for field in form %}
+    {% if field != form.choice_field%}
+        <div class="fieldWrapper">
+          {{ field.label_tag }} {{ field }}
+          {{ field.errors }}
+          <p></p>
+        </div>
+    {% else%}
+        {% for radio in form.choice_field %}
+            <div class="radioButton">
+                {{ radio.tag }}
+                <label for="{{ radio.id_for_label }}"> {{ radio.choice_label }}</label>
+            </div>
+        {% endfor %}
+        {{ field.errors }}
+    {% endif%}
+    {% endfor %}
   <p><input type="submit" value="Sign Up"></p>
 </form>
 {% endblock%}
