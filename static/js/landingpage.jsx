@@ -23,7 +23,7 @@ export default class LandingPage extends React.Component {
                             curElement : 0,
                             sideBarContents : (recv_data.level === "TRAINER") ?
                             ["My Profile", "My Trainees", "Calendar","Saved Workouts", "Trainee Nearby", "Settings"] :
-                            ["My Profile","Calendar","Saved Workouts", recv_data.trainer === null ?  "Find Trainer" : "Trainer Feedback" ,"Settings"]};
+                            ["My Profile","Calendar", "Saved Workouts", "Progress", "Settings"]};
           }.bind(this),
           error: function(xhr, status, err) {
               console.error( status, err.toString());

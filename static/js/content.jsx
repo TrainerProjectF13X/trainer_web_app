@@ -7,7 +7,7 @@ import CurrentTrainees from './mytrainees'
 import Workouts from './workouts'
 import Finder from './finder'
 import Settings from './settings'
-
+import UserProgress from './userprogress'
 
 export default class Content extends React.Component {
     constructor(props) {    /* Note props is passed into the constructor in order to be used */
@@ -20,19 +20,22 @@ export default class Content extends React.Component {
         if(this.props.curContent === "My Profile"){
             display = <Profile profile_info={this.props.curUser}/>;
         }
-        else if (this.props.curContent == "My Trainees"){
+        else if (this.props.curContent === "My Trainees"){
             var clients = this.props.curUser.clients;
             var token = this.props.curUser.auth_token;
             display = <CurrentTrainees curClients={clients} token={token} pollInterval={6000}/>;
         }
-        else if(this.props.curContent == "Calendar"){
+        else if(this.props.curContent === "Calendar"){
             display = <Calendar />;
         }
-        else if(this.props.curContent == "Saved Workouts"){
+        else if(this.props.curContent === "Saved Workouts"){
             display = <Workouts />;
         }
-        else if(this.props.curContent == "Trainee Nearby"){
+        else if(this.props.curContent === "Trainee Nearby"){
             display = <Finder />;
+        }
+        else if(this.props.curContent === "Progress"){
+           display = <UserProgress />;
         }
         else{
             display = <Settings />;
