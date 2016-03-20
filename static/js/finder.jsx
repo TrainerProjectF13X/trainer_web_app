@@ -9,6 +9,9 @@ export default class Finder extends React.Component {
       super(props);
       this.state ={searchResultData : []};
    }
+   clearSearchResultData(){
+      this.setState({searchResultData : []});
+   }
    searchForUser(searchString){
       $.ajax
      ({
@@ -27,8 +30,8 @@ export default class Finder extends React.Component {
    render(){
       return (
          <div>
-            <SearchBar onUserInput={this.searchForUser.bind(this)} />
-            <SearchResults results={this.searchResultData} />
+            <SearchBar onUserInput={this.searchForUser.bind(this)}  resetScreen={this.clearSearchResultData.bind(this)} />
+            <SearchResults results={this.state.searchResultData}/>
          </div>
       );
     }
