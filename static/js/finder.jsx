@@ -2,6 +2,7 @@ var React = require('react')
 var ReactDOM = require('react-dom')
 
 import SearchBar from './searchbar'
+import SearchResults from './searchresults'
 
 export default class Finder extends React.Component {
    constructor(props) {    /* Note props is passed into the constructor in order to be used */
@@ -27,6 +28,7 @@ export default class Finder extends React.Component {
       return (
          <div>
             <SearchBar onUserInput={this.searchForUser.bind(this)} />
+            <SearchResults results={this.searchResultData} />
          </div>
       );
     }
