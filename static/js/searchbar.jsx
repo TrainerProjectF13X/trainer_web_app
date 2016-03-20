@@ -9,6 +9,7 @@ export default class SearchBar extends React.Component {
     inputChanged(){
       this.setState({value : this.refs.searchInput.value});
       /*Set state does not actually guarentee an update will occur*/
+      if(this.refs.searchInput.value.length < 6){return;}
       this.props.onUserInput(this.refs.searchInput.value);
    }
    render(){

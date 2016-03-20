@@ -29,5 +29,6 @@ class RegularAccount(models.Model):
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False, null=True)
     goal = models.TextField(default="Goal")
     profile_pic = models.ImageField(default="")
+    is_searchable = models.BooleanField(default=True, null=False)
     def get_absolute_url(self):
         return reverse("public_profile_page",kwargs={"pk":self.id})

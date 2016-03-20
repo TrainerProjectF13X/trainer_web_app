@@ -21,8 +21,8 @@ class RegularSerialzer(serializers.ModelSerializer):
 
 #This Serializer provides a stripped down view of a Regular user so that the
 #information can be displayed in a public setting, such as a profile for a given
-#user. 
-class RegularUserViewSerialer(serializers.ModelSerializer):
+#user.
+class RegularUserProfileViewSerialer(serializers.ModelSerializer):
     user = UserSerializer()
     class Meta:
         model = RegularAccount
@@ -32,15 +32,15 @@ class RegularUserViewSerialer(serializers.ModelSerializer):
 #assocatied with a given Trainer and sends it out upon successful login.
 class TrainerSerialzer(serializers.ModelSerializer):
     user = UserSerializer()
-    clients = RegularUserViewSerialer(many=True, read_only=True)
+    clients = RegularUserProfileViewSerialer(many=True, read_only=True)
     class Meta:
         model = TrainerAccount
         fields = ('id','level','auth_token','user', 'clients','pastExperience','profile_pic')
 
-#This Serializer gives a Trainer access to THEIR clients. It uses the RegularUserViewSerialer,
+#This Serializer gives a Trainer access to THEIR clients. It uses the RegularUserProfileViewSerialer,
 #which provides a stripped down view of the user.
 class ClientSerialzer(serializers.ModelSerializer):
-    clients = RegularUserViewSerialer(many=True, read_only=True)
+    clients = RegularUserProfileViewSerialer(many=True, read_only=True)
     class Meta:
         model = TrainerAccount
         fields = ('clients',)

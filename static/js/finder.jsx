@@ -9,7 +9,19 @@ export default class Finder extends React.Component {
       this.state ={searchResultData : []};
    }
    searchForUser(searchString){
-      
+      $.ajax
+     ({
+          type : "GET",
+          url : "/api/find_users",
+          dataType: 'json',
+          data: {search_for : 'TRAINEE', search_string : searchString},
+          success : function( recv_data ){
+             this.setState({searchResultData : recv_data});
+          }.bind(this),
+          error: function(xhr, status, err) {
+             console.error( status, err.toString());
+          }.bind(this)
+     });
    }
    render(){
       return (
