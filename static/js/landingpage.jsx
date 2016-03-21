@@ -18,7 +18,6 @@ export default class LandingPage extends React.Component {
           dataType: 'json',
           async: false,
           success : function( recv_data ){
-              console.log("HERE");
               this.state = { curUser : recv_data,
                             curElement : 0,
                             sideBarContents : (recv_data.level === "TRAINER") ?
@@ -37,7 +36,6 @@ export default class LandingPage extends React.Component {
 
     }
     render(){
-        console.log(this.state.curUser);
         var sideBarEle = this.state.sideBarContents.map(function(ele, i){
             var boundClick = this.onSideBarClick.bind(this,i);
             return(<SideBarEle text={ele} onClick={boundClick} curElement={this.state.curElement} key={i} eleIndex ={i}/>);

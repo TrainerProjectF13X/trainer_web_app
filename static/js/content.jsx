@@ -45,7 +45,7 @@ export default class Content extends React.Component {
            display = <UserProgress />;
         }
         else{
-            display = <Settings userLevel={this.props.curUser.level} />;
+            display = <Settings curUser={this.props.curUser} />;
         }
         return (
             <div className="content-parent">
