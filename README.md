@@ -125,3 +125,6 @@ If you add any please update the file accordingly.
 
 * Please add sudo to commands like pip install -r requirments if encounter a permission error
 * Be aware of of the fact that sudo is going to change the file permission setting
+
+
+python manage.py loaddata data_dump.json
