@@ -1,15 +1,32 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block title%}Login{%endblock%}
 
 {% block id %}login{% endblock%}
 
 {% block content%}
-<h1>
-  Join Us Today!
-</h1>
+<nav class="grey darken-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="{% url 'index' %}" class="brand-logo"><img class="logo_nav" src="{% static "img/f13x_logo_allwhite_lg.png" %}"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'login' %}">LOGIN</a></li>
+      </ul>
+    </div>
+
+</nav>
+<div id="bg2">
+<img src="{% static "img/signup_main.jpg" %}" alt="bells">
+</div>
+<div class="row center">
+<div class="col s10 m8 l6 offset-s1 offset-s2 offset-l3 container center">
+     <div class="container center">
+  <div class="section">
+<!-- <h2 class="center bold grey-text text-lighten-5"> -->
+<h2 class="center bold orange-text">
+  JOIN THE TEAM.
+</h2>
 {% if form.non_field_errors %}
-  <ul class='form-errors'>
+  <ul class='form-errors red-text'>
     {% for error in form.non_field_errors %}
       <li>{{ error }}</li>
     {% endfor %}
@@ -19,8 +36,10 @@
     {%csrf_token%}
     {% for field in form %}
     {% if field != form.choice_field%}
-        <div class="fieldWrapper">
+        <div class="fieldWrapper grey-text">
+            <div class='red-text'>
             {{ field.errors }}
+            </div>
             {{ field.label_tag }} {{ field }}
           <p></p>
         </div>
@@ -34,6 +53,11 @@
         {% endfor %}
     {% endif%}
     {% endfor %}
-  <p><input type="submit" value="Sign Up"></p>
+<br>
+  <button class="btn-large waves-effect waves-light orange" type="submit" name="action">SIGN UP</button>
 </form>
+</div>
+</div>
+</div>
+</div>
 {% endblock%}
