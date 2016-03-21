@@ -121,7 +121,7 @@ Command "/usr/bin/python -u -c "import setuptools, tokenize;__file__='/tmp/pip-b
 
 This should install all the dependencies needed in order to run the project. 
 If you add any please update the file accordingly.
-### Permission erros
+### Permission errors
 
 * Please add sudo to commands like pip install -r requirments if encounter a permission error
 * Be aware of of the fact that sudo is going to change the file permission setting
