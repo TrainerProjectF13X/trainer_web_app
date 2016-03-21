@@ -52,20 +52,20 @@ export default class LandingPage extends React.Component {
                 <div className="content-panel-parent">
                 <main>
 
-                <nav>
-                <div className="nav-wrapper grey darken-4">
-                  <a href="/users/logout_user">Logout</a>
-                  <a href="#" className="brand-logo right">F13X</a>
-                  <ul id="nav-mobile" className="right hide-on-med-and-down">
-                  </ul>
-                </div>
-              </nav>
-                <div className="container">
-                  <div className="row">
-                    {contentDisplay}
-                    </div>
-                    </div>
-                    </main>
+                  <nav>
+                  <div className="nav-wrapper grey darken-4">
+                    <a href="/users/logout_user">Logout</a>
+                    <a href="#" className="brand-logo right">F13X</a>
+                    <ul id="nav-mobile" className="right hide-on-med-and-down">
+                    </ul>
+                  </div>
+                </nav>
+                  <div className="container">
+                    <div className="row">
+                      {contentDisplay}
+                      </div>
+                  </div>
+                </main>
                 </div>
             </div>
             </header>

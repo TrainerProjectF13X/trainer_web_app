@@ -26,5 +26,11 @@
     "react-dom": "^0.14.7",
     "webpack": "^1.12.14",
     "webpack-bundle-tracker": "0.0.93"
+  },
+  "dependencies": {
+    "clndr": "^1.4.1",
+    "moment": "^2.12.0",
+    "react-calendar-component": "^1.0.0",
+    "underscore": "^1.8.3"
   }
 }
