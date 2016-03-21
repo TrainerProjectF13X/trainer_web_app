@@ -6,15 +6,42 @@ export default class Settings extends React.Component {
       super(props);
       this.state = {curUser : this.props.curUser};
    }
+   refreshUserInfo(){
+      $.ajax
+      ({
+         type : "GET",
+         url : "/api/get_user",
+         dataType: 'json',
+         success : function( recv_data ){
+            this.setState({ curUser : recv_data});
+         }.bind(this),
+         error: function(xhr, status, err) {
+            console.error( status, err.toString());
+         }.bind(this)
+      });
+   }
    searchableOnChange(){
-      tempUser = this.state.curUser;
-      tempUser.is_searchable = false
-      this.setState({curUser : tempUser});
+      $.ajax
+      ({
+         type : "POST",
+         url : "/api/update_searchability",
+         dataType: 'text',
+         beforeSend: function(xhr) {
+            xhr.setRequestHeader('X-CSRFToken', Cookies.get('csrftoken'));
+         },
+         success : function(){
+            console.log("HERE");
+         },
+         error: function(xhr, status, err) {
+            console.error( status, err.toString());
+         }.bind(this)
+      });
+      this.refreshUserInfo();
    }
    regularUserSettings(){
-      var switchInputSetting = this.state.curUser.is_searchable === true ?
-         <input type="checkbox" checked="checked" onChange={this.searchableOnChange.bind(this)} />  :
-         <input type="checkbox" onChange={this.searchableOnChange.bind(this)} /> ;
+      let switchInputSetting = this.state.curUser.is_searchable === true ?
+      <input type="checkbox" checked="checked" onChange={this.searchableOnChange.bind(this)} />
+      : <input type="checkbox" onChange={this.searchableOnChange.bind(this)} /> ;
 
       return(
          <div>
@@ -34,7 +61,7 @@ export default class Settings extends React.Component {
    }
    render(){
       console.log(this.state.curUser);
-      var settings = this.state.curUser.level === "Trainer" ? this.trainerSettings(): this.regularUserSettings();
+      let settings = (this.state.curUser.level === "TRAINER" ? this.trainerSettings(): this.regularUserSettings());
       console.log(settings);
       return (
          <div>

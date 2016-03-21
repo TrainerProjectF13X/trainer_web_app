@@ -47,6 +47,7 @@ def api_get_user(request, format=None):
         return HttpResponse('Unauthorized', status=401)
     return HttpResponse('Unauthorized', status=401)
 
+
 @api_view(['GET'])
 @authentication_classes((SessionAuthentication, ))
 @permission_classes((IsAuthenticated, ))
@@ -68,4 +69,20 @@ def api_find_users(request, format=None):
             serialized_data = TrainerProfileViewSerialer(qs, many=True, read_only=True).data
             serialized_data = JSONRenderer().render(serialized_data)
             return HttpResponse(serialized_data, content_type='application/json')
+    return HttpResponse('Unauthorized', status=401)
+
+
+@api_view(['POST'])
+@authentication_classes((SessionAuthentication, ))
+@permission_classes((IsAuthenticated, ))
+def api_update_searchability(request, format=None):
+    if request.method == 'POST':
+        current_user = request.user
+        try:
+            regular_user = current_user.regularaccount
+            regular_user.is_searchable = not regular_user.is_searchable
+            regular_user.save()
+            return HttpResponse(status=201)
+        except ObjectDoesNotExist:
+            return HttpResponse('Forbidden', status=403)
     return HttpResponse('Unauthorized', status=401)

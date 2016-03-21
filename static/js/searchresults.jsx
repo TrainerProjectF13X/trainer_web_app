@@ -4,15 +4,15 @@ var ReactDOM = require('react-dom')
 import ProfileCard from './profilecard'
 
 export default class SearchResults extends React.Component {
-    constructor(props) {
+   constructor(props) {
       super(props);
 
-    }
+   }
 
-    render(){
+   render(){
       console.log(this.props.results);
       var content =  this.props.results.map(function(ele, i){
-          return(<ProfileCard user={ele} key={i} eleIndex ={i} searchUserLevel={this.props.userLevel}/>);
+         return(<ProfileCard user={ele} key={i} eleIndex ={i} searchUserLevel={this.props.userLevel}/>);
       },this);
       return (
          <div>
@@ -20,5 +20,5 @@ export default class SearchResults extends React.Component {
             {content}
          </div>
       );
-    }
+   }
 }

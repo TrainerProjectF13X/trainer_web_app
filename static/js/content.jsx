@@ -17,40 +17,40 @@ import Settings from './settings'
 import UserProgress from './userprogress'
 
 export default class Content extends React.Component {
-    constructor(props) {    /* Note props is passed into the constructor in order to be used */
+   constructor(props) {    /* Note props is passed into the constructor in order to be used */
       super(props);
 
-    }
+   }
 
-    render(){
-        var display;
-        if(this.props.curContent === "My Profile"){
-            display = <Profile profile_info={this.props.curUser}/>;
-        }
-        else if (this.props.curContent === "My Trainees"){
-            var clients = this.props.curUser.clients;
-            var token = this.props.curUser.auth_token;
-            display = <CurrentTrainees curClients={clients} token={token} pollInterval={6000}/>;
-        }
-        else if(this.props.curContent === "Calendar"){
-            display = <Calendar />;
-        }
-        else if(this.props.curContent === "Saved Workouts"){
-            display = <Workouts />;
-        }
-        else if(this.props.curContent === "Trainee Nearby" || this.props.curContent === "Trainers Nearby"){
-            display = <Finder userLevel={this.props.curUser.level} />;
-        }
-        else if(this.props.curContent === "Progress"){
-           display = <UserProgress />;
-        }
-        else{
-            display = <Settings curUser={this.props.curUser} />;
-        }
-        return (
-            <div className="content-parent">
-                {display}
-            </div>
-        );
-    }
+   render(){
+      var display;
+      if(this.props.curContent === "My Profile"){
+         display = <Profile profile_info={this.props.curUser}/>;
+      }
+      else if (this.props.curContent === "My Trainees"){
+         var clients = this.props.curUser.clients;
+         var token = this.props.curUser.auth_token;
+         display = <CurrentTrainees curClients={clients} token={token} pollInterval={6000}/>;
+      }
+      else if(this.props.curContent === "Calendar"){
+         display = <Calendar />;
+      }
+      else if(this.props.curContent === "Saved Workouts"){
+         display = <Workouts />;
+      }
+      else if(this.props.curContent === "Trainee Nearby" || this.props.curContent === "Trainers Nearby"){
+         display = <Finder userLevel={this.props.curUser.level} />;
+      }
+      else if(this.props.curContent === "Progress"){
+         display = <UserProgress />;
+      }
+      else{
+         display = <Settings curUser={this.props.curUser} />;
+      }
+      return (
+         <div className="content-parent">
+            {display}
+         </div>
+      );
+   }
 }

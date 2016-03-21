@@ -7,7 +7,7 @@ export default class SideBarEle extends React.Component {
 
     }
     render(){
-        var eleClass = "";
+        let eleClass = "";
         if(this.props.eleIndex === this.props.curElement){
             eleClass = "navbar-ele-active";
         }

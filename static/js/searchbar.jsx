@@ -2,11 +2,11 @@ var React = require('react')
 var ReactDOM = require('react-dom')
 
 export default class SearchBar extends React.Component {
-    constructor(props) {
+   constructor(props) {
       super(props);
       this.state = {value : "" };
-    }
-    inputChanged(){
+   }
+   inputChanged(){
       this.setState({value : this.refs.searchInput.value});
       /*Set state does not actually guarentee an update will occur*/
       if(this.refs.searchInput.value.length === 0){
@@ -17,8 +17,8 @@ export default class SearchBar extends React.Component {
    }
    render(){
       return (
-           <input type="text" ref="searchInput" placeholder="Search for user by email or username"
-              value={this.state.value} onChange={this.inputChanged.bind(this)} />
-        );
-    }
+         <input type="text" ref="searchInput" placeholder="Search for user by email or username"
+            value={this.state.value} onChange={this.inputChanged.bind(this)} />
+      );
+   }
 }

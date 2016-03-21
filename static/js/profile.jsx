@@ -8,11 +8,11 @@ export default class Profile extends React.Component {
     }
 
     render(){
-        var level = this.props.profile_info.level
-        var profile_pic = <img src="" alt="Profile Pic"></img>
-        var profile = <p>{this.props.profile_info.profile}this is supposed to be profile</p>
+        let level = this.props.profile_info.level
+        let profile_pic = <img src="" alt="Profile Pic"></img>
+        let profile = <p>{this.props.profile_info.profile}this is supposed to be profile</p>
         if(level === "TRAINER"){
-            var pastExperience = <p>{this.props.profile_info.past_experience} this is supposed to be past experience</p>
+            let pastExperience = <p>{this.props.profile_info.past_experience} this is supposed to be past experience</p>
             return (
 
                 <div>
@@ -23,7 +23,7 @@ export default class Profile extends React.Component {
             );
         }
         else{
-            var goal = <p>{this.props.profile_info.goal} this is supposed to be goal</p>
+            let goal = <p>{this.props.profile_info.goal} this is supposed to be goal</p>
             return (
                 <div>
                     {profile_pic}

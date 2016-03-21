@@ -18,7 +18,7 @@ export default class Finder extends React.Component {
       this.setState({searchResultData : []});
    }
    searchForUser(searchString){
-      var searchQuery = this.props.userLevel === "TRAINER" ? "TRAINEE": "TRAINEER";
+      let searchQuery = this.props.userLevel === "TRAINER" ? "TRAINEE": "TRAINEER";
       $.ajax
      ({
           type : "GET",
