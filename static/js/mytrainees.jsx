@@ -25,7 +25,7 @@ export default class CurrentTrainees extends React.Component {
             dataType: 'json',
             headers: {"Authorization" : "Token " + this.state.token},
             success : function( recv_data ){
-                this.setState({curClients: recv_data});
+                this.setState({curClients: recv_data.clients});
             }.bind(this),
             error: function(xhr, status, err) {
                 console.error( status, err.toString());
@@ -33,13 +33,15 @@ export default class CurrentTrainees extends React.Component {
         });
     }
     render(){
+
         let clients = this.state.curClients.map(function (ele, i) {
-            return (
-                <ProfileCard  curUser={ele} userLevel="TRAINEE" key={i} eleIndex={i}/>);
+            return (<ProfileCard  user={ele} userLevel="TRAINER" key={i} eleIndex={i}/>);
         }, this);
         return (
-            <h1>Current Trainees</h1>
-
+            <div>
+                <h1>Current Trainees</h1>
+                {clients}
+            </div>
         );
     }
 }
