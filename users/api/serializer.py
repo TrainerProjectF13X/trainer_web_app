@@ -17,7 +17,7 @@ class RegularSerialzer(serializers.ModelSerializer):
     user = UserSerializer()
     class Meta:
         model = RegularAccount
-        fields = ('id','level','auth_token', 'trainer','user','goal','profile_pic')
+        fields = ('id','level','auth_token', 'trainer','user','goal','profile_pic', 'is_searchable')
 
 #This Serializer provides a stripped down view of a Regular user so that the
 #information can be displayed in a public setting, such as a profile for a given
@@ -26,16 +26,17 @@ class RegularUserProfileViewSerialer(serializers.ModelSerializer):
     user = UserSerializer()
     class Meta:
         model = RegularAccount
-        fields = ('user', 'profile')
+        fields = ('user', 'profile','goal', 'profile_pic')
 
 #This is our Serializer for a trainer. This contains all the relevant information
 #assocatied with a given Trainer and sends it out upon successful login.
 class TrainerSerialzer(serializers.ModelSerializer):
     user = UserSerializer()
+    #Pulls all clients using the relationship established in the db
     clients = RegularUserProfileViewSerialer(many=True, read_only=True)
     class Meta:
         model = TrainerAccount
-        fields = ('id','level','auth_token','user', 'clients','pastExperience','profile_pic')
+        fields = ('id','level','auth_token','user', 'clients','past_experience','profile_pic')
 
 #This Serializer gives a Trainer access to THEIR clients. It uses the RegularUserProfileViewSerialer,
 #which provides a stripped down view of the user.
@@ -44,3 +45,12 @@ class ClientSerialzer(serializers.ModelSerializer):
     class Meta:
         model = TrainerAccount
         fields = ('clients',)
+
+#This Seralizer provides a stripped down view of a Trainer so that the Trainer's
+#information can be displayed in a public setting without compromising their
+#privacy.
+class TrainerProfileViewSerialer(serializers.ModelSerializer):
+    user = UserSerializer()
+    class Meta:
+        model = TrainerAccount
+        fields = ('user', 'profile','past_experience', 'profile_pic')

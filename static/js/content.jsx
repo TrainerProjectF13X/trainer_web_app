@@ -1,3 +1,10 @@
+/*
+This is our routing page that is used in order to deliver the user to the
+correct sub-page that they wish to go to. It is in charge of handling those
+clicks that come from the side bar.
+*/
+
+
 var React = require('react')
 var ReactDOM = require('react-dom')
 
@@ -31,14 +38,14 @@ export default class Content extends React.Component {
         else if(this.props.curContent === "Saved Workouts"){
             display = <Workouts />;
         }
-        else if(this.props.curContent === "Trainee Nearby"){
-            display = <Finder />;
+        else if(this.props.curContent === "Trainee Nearby" || this.props.curContent === "Trainers Nearby"){
+            display = <Finder userLevel={this.props.curUser.level} />;
         }
         else if(this.props.curContent === "Progress"){
            display = <UserProgress />;
         }
         else{
-            display = <Settings />;
+            display = <Settings userLevel={this.props.curUser.level} />;
         }
         return (
             <div className="content-parent">

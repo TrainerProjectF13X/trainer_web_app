@@ -9,13 +9,14 @@ export default class ProfileCard extends React.Component {
 
     render(){
       var curUser = this.props.user;
+      var goalsOrExp = this.props.searchUserLevel === "TRAINER" ? <p>Goals: {curUser.goal}</p> :  <p>Exp: {curUser.past_experience}</p>;
       console.log(curUser);
       return (
          <div>
             <img src={curUser.profile_pic} alt="Temp pic" height="42" width="42"/>
             <p>{curUser.user.username}</p>
             <p>{curUser.user.email}</p>
-            <p>Goals: {curUser.goal}</p>
+            {goalsOrExp}
          </div>
       );
     }

@@ -1,5 +1,5 @@
 from django.http import JsonResponse, HttpResponse
-from .serializer import ClientSerialzer, TrainerSerialzer, RegularSerialzer, RegularUserProfileViewSerialer
+from .serializer import ClientSerialzer, TrainerSerialzer, RegularSerialzer, RegularUserProfileViewSerialer, TrainerProfileViewSerialer
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework.renderers import JSONRenderer
 from django.shortcuts import render
@@ -62,5 +62,10 @@ def api_find_users(request, format=None):
             serialized_data = JSONRenderer().render(serialized_data)
             return HttpResponse(serialized_data, content_type='application/json')
         else:
-            return JsonResponse({})
+            qs = TrainerAccount.objects.all()
+            qs = qs.filter(Q(user__email__icontains      = search_string) |
+                           Q(user__username__icontains   = search_string))
+            serialized_data = TrainerProfileViewSerialer(qs, many=True, read_only=True).data
+            serialized_data = JSONRenderer().render(serialized_data)
+            return HttpResponse(serialized_data, content_type='application/json')
     return HttpResponse('Unauthorized', status=401)

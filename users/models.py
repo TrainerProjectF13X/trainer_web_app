@@ -15,7 +15,7 @@ class TrainerAccount(models.Model):
     level =  models.CharField(max_length=7,default=TRAINER, editable=False)
     profile = models.TextField(default="User Profile")  # larger
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False, null=True)
-    pastExperience = models.TextField(default="Past Experience")
+    past_experience = models.TextField(default="Past Experience")
     profile_pic = models.ImageField(default="")
     def get_absolute_url(self):
         return reverse("public_profile_page",kwargs={"pk":self.id})
