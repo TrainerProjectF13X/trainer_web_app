@@ -1,6 +1,8 @@
-var React = require('react')
-var ReactDOM = require('react-dom')
-
+var React = require('react');
+var ReactDOM = require('react-dom');
+require('materialize-css/dist/css/materialize.css');
+require('materialize-css/dist/js/materialize.js');
+require('materialize-css/js/init.js');
 
 import Content from './content.jsx'
 import SideBarEle from './sidebarele.jsx'
@@ -34,7 +36,13 @@ export default class LandingPage extends React.Component {
         this.setState({curElement : index});
     }
     componentDidMount(){
+        (function($){
+          $(function(){
 
+            $('.button-collapse').sideNav();
+
+          }); // end of document ready
+        })(jQuery); // end of jQuery name space
     }
     render(){
         console.log(this.state.curUser);
@@ -45,6 +53,15 @@ export default class LandingPage extends React.Component {
         var contentDisplay = <Content curContent={this.state.sideBarContents[this.state.curElement]} curUser={this.state.curUser}/>
         return (
             <header>
+                <nav>
+                <div className="nav-wrapper grey darken-4">
+
+                  <a href="/" className="brand-logo">F13X</a>
+                  <ul id="nav-mobile" className="right hide-on-med-and-down">
+                      <a href="/users/logout_user">LOGOUT</a>
+                  </ul>
+                </div>
+              </nav>
             <div>
                 <div className="side-bar-parent">
                     <ul id="nav-mobile" className="side-nav fixed">
@@ -53,15 +70,6 @@ export default class LandingPage extends React.Component {
                 </div>
                 <div className="content-panel-parent">
                 <main>
-
-                  <nav>
-                  <div className="nav-wrapper grey darken-4">
-                    <a href="/users/logout_user">Logout</a>
-                    <a href="#" className="brand-logo right">F13X</a>
-                    <ul id="nav-mobile" className="right hide-on-med-and-down">
-                    </ul>
-                  </div>
-                </nav>
                   <div className="container">
                     <div className="row">
                       {contentDisplay}

@@ -27,7 +27,9 @@ module.exports = {
             'window.jQuery': 'jquery',
             _: 'underscore',
             moment: 'moment',
-            clndr: 'clndr'
+            clndr: 'clndr',
+            materializecss: 'materialize-css',
+            materialize: 'materialize-css'
         })
     ],
 
@@ -45,7 +47,13 @@ module.exports = {
                     //specify that we will be dealing with React code
                     presets: ['react','es2015']
                 }
-            }
+            },
+            { test: /\.css$/, loader: "style-loader!css-loader" },
+            { test: /\.woff$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+            { test: /\.woff2$/, loader: "url-loader?limit=10000&mimetype=application/font-woff2" },
+            { test: /\.ttf$/,  loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
+            { test: /\.eot$/,  loader: "file-loader" },
+            { test: /\.svg$/,  loader: "url-loader?limit=10000&mimetype=image/svg+xml" }
         ]
     },
 
