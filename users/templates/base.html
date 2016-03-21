@@ -6,9 +6,6 @@
     <title>{% block title%} {%endblock%}</title>
     <!— JS Libraries —>
     <script type="text/javascript" src="{% static "js/lib/jquery-2.2.1.min.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/lib/underscore-min.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/lib/moment.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/lib/clndr.js" %}"></script>
     <!— CSS Libraries —>
     <script type="text/javascript" src="{% static "js/materialize/materialize.min.js" %}"></script>
     <link type="text/css" rel="stylesheet" href="{% static "css/materialize.min.css" %}">
@@ -16,7 +13,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link href="{% static "css/base.css" %}" rel="stylesheet">
+    <!-- <link href="{% static "css/base.css" %}" rel="stylesheet"> -->
   </head>
   <body>
     <div id="{% block id %}{% endblock%}">
