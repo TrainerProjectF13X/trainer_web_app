@@ -1,6 +1,8 @@
 var React = require('react')
 var ReactDOM = require('react-dom')
 
+import ProfileCard from './profilecard.jsx'
+
 export default class CurrentTrainees extends React.Component {
     constructor(props) {
       super(props);
@@ -31,8 +33,13 @@ export default class CurrentTrainees extends React.Component {
         });
     }
     render(){
+        let clients = this.state.curClients.map(function (ele, i) {
+            return (
+                <ProfileCard  curUser={ele} userLevel="TRAINEE" key={i} eleIndex={i}/>);
+        }, this);
         return (
             <h1>Current Trainees</h1>
+
         );
     }
 }
