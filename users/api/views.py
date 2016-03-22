@@ -20,7 +20,8 @@ def api_get_trainees(request, format=None):
         try:
             trainer = request.user.traineraccount
             serialized_data = ClientSerialzer(trainer).data
-            return JsonResponse(serialized_data);
+            serialized_data = JSONRenderer().render(serialized_data)
+            return HttpResponse(serialized_data, content_type='application/json')
         except ObjectDoesNotExist:
             return HttpResponse('Forbidden', status=403)
     return HttpResponse('Unauthorized', status=401)

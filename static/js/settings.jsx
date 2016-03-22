@@ -12,6 +12,7 @@ export default class Settings extends React.Component {
          type : "GET",
          url : "/api/get_user",
          dataType: 'json',
+         async: false,
          success : function( recv_data ){
             this.setState({ curUser : recv_data});
          }.bind(this),
@@ -26,11 +27,12 @@ export default class Settings extends React.Component {
          type : "POST",
          url : "/api/update_searchability",
          dataType: 'text',
+         async: false,
          beforeSend: function(xhr) {
             xhr.setRequestHeader('X-CSRFToken', Cookies.get('csrftoken'));
          },
          success : function(){
-            console.log("HERE");
+
          },
          error: function(xhr, status, err) {
             console.error( status, err.toString());
@@ -60,9 +62,7 @@ export default class Settings extends React.Component {
       return(<h3>Trainer Settings</h3>);
    }
    render(){
-      console.log(this.state.curUser);
       let settings = (this.state.curUser.level === "TRAINER" ? this.trainerSettings(): this.regularUserSettings());
-      console.log(settings);
       return (
          <div>
             <h1>User settings</h1>

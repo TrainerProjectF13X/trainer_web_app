@@ -10,7 +10,6 @@ export default class ProfileCard extends React.Component {
     render(){
       let curUser = this.props.user;
       let goalsOrExp = this.props.searchUserLevel === "TRAINER" ? <p>Goals: {curUser.goal}</p> :  <p>Exp: {curUser.past_experience}</p>;
-      console.log(curUser);
       return (
          <div>
             <img src={curUser.profile_pic} alt="Temp pic" height="42" width="42"/>

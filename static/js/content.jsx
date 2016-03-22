@@ -29,8 +29,7 @@ export default class Content extends React.Component {
       }
       else if (this.props.curContent === "My Trainees"){
          var clients = this.props.curUser.clients;
-         var token = this.props.curUser.auth_token;
-         display = <CurrentTrainees curClients={clients} token={token} pollInterval={6000}/>;
+         display = <CurrentTrainees curClients={clients} pollInterval={6000}/>;
       }
       else if(this.props.curContent === "Calendar"){
          display = <Calendar />;

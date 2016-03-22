@@ -9,14 +9,14 @@ export default class SideBarEle extends React.Component {
     render(){
         let eleClass = "";
         if(this.props.eleIndex === this.props.curElement){
-            eleClass = "navbar-ele-active";
+            eleClass = "active";
         }
         else{
             eleClass = "navbar-ele";
         }
 
         return (
-            <li><a className={eleClass} onClick={this.props.onClick}>{this.props.text}</a></li>
+            <li className={eleClass}><a onClick={this.props.onClick}>{this.props.text}</a></li>
         );
     }
 }
