@@ -9,7 +9,7 @@ export default class Workouts extends React.Component {
 
     render(){
         return (
-            <h1>Your Workouts</h1>
+            <h2 className="center">My Workouts</h2>
         );
     }
 }

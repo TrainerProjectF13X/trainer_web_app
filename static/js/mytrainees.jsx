@@ -36,7 +36,7 @@ export default class CurrentTrainees extends React.Component {
       }, this);
       return (
          <div>
-            <h1>Current Trainees</h1>
+            <h2 className="center">Current Trainees</h2>
             {clients}
          </div>
       );

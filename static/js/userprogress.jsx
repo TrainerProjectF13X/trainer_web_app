@@ -9,7 +9,7 @@ export default class UserProgress extends React.Component {
 
     render(){
         return (
-            <h1>User progress</h1>
+            <h2 className="center">User Progress</h2>
         );
     }
 }

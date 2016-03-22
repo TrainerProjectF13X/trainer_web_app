@@ -65,7 +65,7 @@ export default class Settings extends React.Component {
       let settings = (this.state.curUser.level === "TRAINER" ? this.trainerSettings(): this.regularUserSettings());
       return (
          <div>
-            <h1>User settings</h1>
+            <h2 className="center">User Settings</h2>
             {settings}
          </div>
       );
