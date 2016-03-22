@@ -21,7 +21,7 @@ export default class ProfileCard extends React.Component {
               </div>
               <div className="card-content">
                   <p className="grey-text">{curUser.user.email}</p>
-                  <p className="">{goalsOrExp}</p>
+                  <div className="light">{goalsOrExp}</div>
               </div>
           </div>
       );

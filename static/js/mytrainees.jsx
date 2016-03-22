@@ -32,12 +32,20 @@ export default class CurrentTrainees extends React.Component {
    }
    render(){
       let clients = this.state.curClients.map(function (ele, i) {
-         return (<ProfileCard  user={ele} searchUserLevel="TRAINER" key={i} eleIndex={i}/>);
+         return (
+             <div className="col s12 m6 l4">
+                 <div className="card">
+                     <ProfileCard user={ele} searchUserLevel="TRAINER" key={i} eleIndex={i}/>
+                </div>
+            </div>
+        );
       }, this);
       return (
          <div>
             <h2 className="center">Current Trainees</h2>
+            <div className="row">
             {clients}
+            </div>
          </div>
       );
    }

@@ -72,7 +72,7 @@ export default class LandingPage extends React.Component {
                             <a className="right" href="/users/logout_user">LOGOUT</a>
                             <a href="#" data-activates="mobile-view" className="button-collapse"><i className="material-icons">menu</i></a>
                             <ul className="side-nav fixed">
-                                <li className="logo"><a id="logo-container" href="#" className="brand-logo">
+                                <li className="logo"><a id="logo-container" href="#" className="brand-logo center">
                                     <object id="front-page-logo" className="logo_sidenav center" type="image/png" data={logo_black}>Your browser does not support SVG</object>
                                 </a></li>
                                 <div className="divider"></div>
@@ -84,7 +84,7 @@ export default class LandingPage extends React.Component {
                         </div>
                     </nav>
                 </div>
-                <div className="content-panel-parent">
+                <div className="content-panel-parent grey lighten-5">
                     <main>
                         <div className="container">
                             <div className="row">
