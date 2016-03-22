@@ -1,8 +1,5 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-require('materialize-css/dist/css/materialize.css');
-require('materialize-css/dist/js/materialize.js');
-require('materialize-css/js/init.js');
 
 import Content from './content.jsx'
 import SideBarEle from './sidebarele.jsx'
@@ -59,11 +56,11 @@ export default class LandingPage extends React.Component {
                      <a href="#" data-activates="mobile-view" className="button-collapse"><i className="material-icons">menu</i></a>
                      <ul className="side-nav fixed">
                         {sideBarEle}
-                        <li><a href="/users/logout_user left">Logout</a></li>
+                        <li><a href="/users/logout_user">Logout</a></li>
                      </ul>
                      <ul className="side-nav" id="mobile-view">
                         {sideBarEle}
-                        <li><a href="/users/logout_user left">Logout</a></li>
+                        <li><a href="/users/logout_user">Logout</a></li>
                      </ul>
                   </div>
                </nav>
