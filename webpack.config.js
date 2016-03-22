@@ -12,9 +12,10 @@ module.exports = {
 
    output: {
       //where you want your compiled bundle to be stored
-      path: path.resolve('./static/bundles/'),
+      path: path.resolve('./static'),
       //naming convention webpack should use for your files
-      filename: 'bundle.js',
+      filename: '/bundles/bundle.js',
+      publicPath: '/static',//path.resolve('./static'),
    },
 
    plugins: [
@@ -47,6 +48,13 @@ module.exports = {
                     presets: ['react','es2015']
                 }
             },
+            // Loader for images
+            {
+                 test: /\.(png|jpg)$/,
+                 loader: 'file-loader?name=/img/[name].[ext]'
+            },
+
+            // Other, CSS related loaders
             { test: /\.css$/, loader: "style-loader!css-loader" },
             { test: /\.woff$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
             { test: /\.woff2$/, loader: "url-loader?limit=10000&mimetype=application/font-woff2" },

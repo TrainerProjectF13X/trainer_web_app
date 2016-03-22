@@ -6,6 +6,8 @@ import SideBarEle from './sidebarele.jsx'
 
 require('./materialize/materialize.js')
 
+import logo_white from '../img/f13x_logo_allwhite_lg.png';
+
 export default class LandingPage extends React.Component {
    constructor(props) {    /* Note props is passed into the constructor in order to be used */
       super(props);
@@ -65,7 +67,7 @@ export default class LandingPage extends React.Component {
             <div className="navbar-fixed">
                <nav>
                   <div className="nav-wrapper grey darken-4">
-                     <a href="#" className="brand-logo right">F13X</a>
+                     <a id="logo-container" href="#" className="brand-logo center"><img className="logo_nav landing" src={logo_white}/></a>
                      <a href="#" data-activates="mobile-view" className="button-collapse"><i className="material-icons">menu</i></a>
                      <ul className="side-nav fixed">
                         {sideBarEle}
@@ -73,7 +75,7 @@ export default class LandingPage extends React.Component {
                      </ul>
                      <ul className="side-nav" id="mobile-view">
                         {sideBarEle}
-                        <li><a href="/users/logout_user">Logout</a></li>
+                        //<li><a href="/users/logout_user">Logout</a></li>
                      </ul>
                   </div>
                </nav>
