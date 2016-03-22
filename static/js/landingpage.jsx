@@ -11,7 +11,20 @@ export default class LandingPage extends React.Component {
       super(props);
       this.getUserInfo();
    }
-
+   refreshUserInfo(){
+      $.ajax
+      ({
+         type : "GET",
+         url : "/api/get_user",
+         dataType: 'json',
+         success : function( recv_data ){
+            this.setState({ curUser : recv_data});
+         }.bind(this),
+         error: function(xhr, status, err) {
+            console.error( status, err.toString());
+         }.bind(this)
+      });
+   }
    getUserInfo() {
       $.ajax
       ({

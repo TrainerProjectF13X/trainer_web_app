@@ -8,7 +8,7 @@ from rest_framework.authentication import SessionAuthentication
 from rest_framework.decorators import api_view, permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated
 
-from ..models import TrainerAccount, RegularAccount
+from ..models import TrainerAccount, RegularAccount, TrainerAskUser, UserAskTrainer
 from django.db.models import Q
 
 
@@ -86,4 +86,25 @@ def api_update_searchability(request, format=None):
             return HttpResponse(status=201)
         except ObjectDoesNotExist:
             return HttpResponse('Forbidden', status=403)
+    return HttpResponse('Unauthorized', status=401)
+
+
+@api_view(['POST'])
+@authentication_classes((SessionAuthentication, ))
+@permission_classes((IsAuthenticated, ))
+def api_training_request(request, format=None):
+    if request.method == 'POST':
+        current_user = request.user
+        try:
+            regular_user = current_user.regularaccount
+
+            return HttpResponse(status=201)
+        except ObjectDoesNotExist:
+            pass
+        try:
+            trainer_user = current_user.traineraccount
+            
+            return HttpResponse(status=201)
+        except:
+            pass
     return HttpResponse('Unauthorized', status=401)

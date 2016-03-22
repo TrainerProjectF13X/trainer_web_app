@@ -8,11 +8,36 @@ export default class SearchResults extends React.Component {
       super(props);
 
    }
+   addPotentialClient(potentialClientName){
+      $.ajax
+      ({
+         type : "POST",
+         url : "/api/training_request",
+         dataType: 'text',
+         data: {'client_name' : potentialClientName},
+         beforeSend: function(xhr) {
+            xhr.setRequestHeader('X-CSRFToken', Cookies.get('csrftoken'));
+         },
+         success : function(){
 
+         },
+         error: function(xhr, status, err) {
+            console.error( status, err.toString());
+         }.bind(this)
+      });
+   }
    render(){
       console.log(this.props.results);
       var content =  this.props.results.map(function(ele, i){
-         return(<ProfileCard user={ele} key={i} eleIndex ={i} userLevel={this.props.userLevel}/>);
+         let boundClick = this.addPotentialClient.bind(this, ele.user.username);
+         return(
+            <div key={i} >
+               <ProfileCard user={ele} eleIndex ={i} searchUserLevel={this.props.searchUserLevel}/>
+               <button className="btn waves-effect waves-light" type="submit"
+                  name="action" onClick={boundClick} >Add
+                  <i className="material-icons">add</i>
+               </button>
+            </div>);
       },this);
       return (
          <div>

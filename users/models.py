@@ -32,3 +32,14 @@ class RegularAccount(models.Model):
     is_searchable = models.BooleanField(default=True, null=False)
     def get_absolute_url(self):
         return reverse("public_profile_page",kwargs={"pk":self.id})
+
+class TrainerAskUser(models.Model):
+    rglr_user = models.ForeignKey(RegularAccount, null=False)
+    trainer   = models.ForeignKey(TrainerAccount, null=False)
+    pending   = models.BooleanField(default=True, null=False)
+
+
+class UserAskTrainer(models.Model):
+    rglr_user = models.ForeignKey(RegularAccount, null=False)
+    trainer   = models.ForeignKey(TrainerAccount, null=False)
+    pending   = models.BooleanField(default=True, null=False)
