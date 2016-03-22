@@ -8,13 +8,13 @@ export default class SearchResults extends React.Component {
       super(props);
 
    }
-   addPotentialClient(potentialClientName){
+   addPotentialClient(userName){
       $.ajax
       ({
          type : "POST",
          url : "/api/training_request",
          dataType: 'text',
-         data: {'client_name' : potentialClientName},
+         data: {'username' : userName},
          beforeSend: function(xhr) {
             xhr.setRequestHeader('X-CSRFToken', Cookies.get('csrftoken'));
          },
