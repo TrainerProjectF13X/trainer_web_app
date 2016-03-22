@@ -108,7 +108,7 @@ def api_training_request(request, format=None):
         try:
             trainer = current_user.traineraccount
             regular_user = User.objects.get(username=search_username).regularaccount
-            token = UserAskTrainerToken(trainer=trainer,rglr_user=regular_user)
+            token = TrainerAskUserToken(trainer=trainer,rglr_user=regular_user)
             token.save()
             return HttpResponse(status=201)
         except ObjectDoesNotExist:
