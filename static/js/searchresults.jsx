@@ -12,7 +12,7 @@ export default class SearchResults extends React.Component {
    render(){
       console.log(this.props.results);
       var content =  this.props.results.map(function(ele, i){
-         return(<ProfileCard user={ele} key={i} eleIndex ={i} searchUserLevel={this.props.userLevel}/>);
+         return(<ProfileCard user={ele} key={i} eleIndex ={i} userLevel={this.props.userLevel}/>);
       },this);
       return (
          <div>

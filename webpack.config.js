@@ -31,24 +31,30 @@ module.exports = {
       })
    ],
 
-   module: {
-      loaders: [
-         //a regexp that tells webpack use the following loaders on all
-         //.js and .jsx files
-         {test: /\.jsx?$/,
-            //we definitely don't want babel to transpile all the files in
-            //node_modules. That would take a long time.
-            exclude: /node_modules/,
-            //use the babel loader
-            loader: 'babel-loader',
-            query: {
-               //specify that we will be dealing with React code
-               presets: ['react','es2015']
-            }
-         },
-         { test: /\.css$/, loader: 'style!css' }
-      ]
-   },
+
+    module: {
+        loaders: [
+            //a regexp that tells webpack use the following loaders on all
+            //.js and .jsx files
+            {test: /\.jsx?$/,
+                //we definitely don't want babel to transpile all the files in
+                //node_modules. That would take a long time.
+                exclude: /node_modules/,
+                //use the babel loader
+                loader: 'babel-loader',
+                query: {
+                    //specify that we will be dealing with React code
+                    presets: ['react','es2015']
+                }
+            },
+            { test: /\.css$/, loader: "style-loader!css-loader" },
+            { test: /\.woff$/, loader: "url-loader?limit=10000&mimetype=application/font-woff" },
+            { test: /\.woff2$/, loader: "url-loader?limit=10000&mimetype=application/font-woff2" },
+            { test: /\.ttf$/,  loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
+            { test: /\.eot$/,  loader: "file-loader" },
+            { test: /\.svg$/,  loader: "url-loader?limit=10000&mimetype=image/svg+xml" }
+        ]
+    },
 
    resolve: {
       //tells webpack where to look for modules

@@ -1,10 +1,87 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% block title%}Index{%endblock%}
 
 {% block id %}index{% endblock%}
 {% block content%}
-<h1>Welcome</h1>
-<a href="{% url 'sign_up' %}">Join Today</a>
-<p></p>
-<a href="{% url 'login' %}">Existing User</a>
+<nav class="grey darken-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="{% url 'index' %}" class="brand-logo"><img class="logo_nav" src="{% static "img/f13x_logo_allwhite_lg.png" %}"></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{% url 'login' %}">LOGIN</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">X</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="container center">
+        <br><br>
+        <img class="logo_main" src="{% static "img/f13x_logo_white_lg.png" %}">
+        <!-- <h1 class="header center teal-text text-lighten-2">Parallax Template</h1> -->
+        <div class="row center">
+          <h5 class="header col s12 grey-text text-lighten-5 light">A smarter way to workout. Focus on reaching your goals.</h5>
+        </div>
+        <div class="row center">
+          <a href="{% url 'sign_up' %}" id="download-button" class="btn-large waves-effect waves-light grey darken-3">Join Today</a>
+        </div>
+        <br><br>
+
+      </div>
+    </div>
+    <div class="parallax"><img class="main_img" src="{% static "img/index_main.jpg" %}"></div>
+  </div>
+
+  <!--TODO: Change text on here -->
+  <div class="container">
+    <div class="section">
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><i class="large material-icons orange-text center">event</i></h2>
+            <h5 class="center">Speeds up development</h5>
+
+            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><i class="large material-icons orange-text center">group</i></h2>
+            <h5 class="center">User Experience Focused</h5>
+
+            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center"><i class="large material-icons orange-text center">settings</i></h2>
+            <h5 class="center">Easy to work with</h5>
+
+            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<script type="text/javascript">
+(function($){
+  $(function(){
+
+    $('.button-collapse').sideNav();
+    $('.parallax').parallax();
+
+  }); // end of document ready
+})(jQuery);
+</script>
+
 {% endblock%}
