@@ -1,6 +1,9 @@
 var React = require('react')
 var ReactDOM = require('react-dom')
 
+
+import profile_default from '../img/profile_default.png';
+
 export default class ProfileCard extends React.Component {
     constructor(props) {
       super(props);
@@ -11,12 +14,16 @@ export default class ProfileCard extends React.Component {
       let curUser = this.props.user;
       let goalsOrExp = this.props.searchUserLevel === "TRAINER" ? <p>Goals: {curUser.goal}</p> :  <p>Exp: {curUser.past_experience}</p>;
       return (
-         <div>
-            <img src={curUser.profile_pic} alt="Temp pic" height="42" width="42"/>
-            <p>{curUser.user.username}</p>
-            <p>{curUser.user.email}</p>
-            {goalsOrExp}
-         </div>
+          <div>
+              <div className="card-image">
+                  <img src={profile_default}/>
+                  <span className="card-title ">{curUser.user.username}</span>
+              </div>
+              <div className="card-content">
+                  <p className="grey-text">{curUser.user.email}</p>
+                  <p className="">{goalsOrExp}</p>
+              </div>
+          </div>
       );
     }
 }

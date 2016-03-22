@@ -8,11 +8,13 @@ export default class SideBarEle extends React.Component {
     }
     render(){
         let eleClass = "";
+        let eleIcon = "";
+
         if(this.props.eleIndex === this.props.curElement){
-            eleClass = "active";
+            eleClass = "active bold";
         }
         else{
-            eleClass = "navbar-ele";
+            eleClass = "navbar-ele bold";
         }
 
         return (

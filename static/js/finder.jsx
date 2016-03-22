@@ -36,6 +36,7 @@ export default class Finder extends React.Component {
    render(){
       return (
          <div>
+            <h2 className="center">Search Trainees</h2>
             <SearchBar onUserInput={this.searchForUser.bind(this)}  resetScreen={this.clearSearchResultData.bind(this)} />
             <SearchResults results={this.state.searchResultData} searchUserLevel={this.props.userLevel} />
          </div>

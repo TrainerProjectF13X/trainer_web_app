@@ -31,17 +31,17 @@ export default class SearchResults extends React.Component {
       var content =  this.props.results.map(function(ele, i){
          let boundClick = this.addPotentialClient.bind(this, ele.user.username);
          return(
-            <div key={i} >
-               <ProfileCard user={ele} eleIndex ={i} searchUserLevel={this.props.searchUserLevel}/>
-               <button className="btn waves-effect waves-light" type="submit"
-                  name="action" onClick={boundClick} >Add
-                  <i className="material-icons">add</i>
-               </button>
+            <div className="col s12 m6 l4" key={i} >
+                <div className="card">
+                <ProfileCard user={ele} eleIndex ={i} searchUserLevel={this.props.searchUserLevel}/>
+                <div className="card-action">
+                <button className="btn waves-effect waves-light orange" type="submit" name="action" onClick={boundClick} >Add<i className="material-icons right">add</i></button>
+                </div>
+                </div>
             </div>);
       },this);
       return (
-         <div>
-            <h1>Search Results</h1>
+         <div className="row">
             {content}
          </div>
       );

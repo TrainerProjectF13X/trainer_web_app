@@ -17,8 +17,15 @@ export default class SearchBar extends React.Component {
    }
    render(){
       return (
-         <input type="text" ref="searchInput" placeholder="Search for user by email or username"
-            value={this.state.value} onChange={this.inputChanged.bind(this)} />
-      );
+        <div>
+            <form>
+            <div className="input-field">
+              <i className="material-icons prefix">search</i>
+              <input id="search" type="text" placeholder="Search for user by email or username"ref="searchInput" value={this.state.value} onChange={this.inputChanged.bind(this)}/>
+
+            </div>
+          </form>
+        </div>
+        );
    }
 }
