@@ -36,7 +36,7 @@ export default class Calendar extends React.Component {
            return(
                _.each(daysOfTheWeek, function(day) {
                    <div className="header-day">{day}</div>
-               });
+               })
             );
        };
 
@@ -44,7 +44,7 @@ export default class Calendar extends React.Component {
           return(
              _.each(days, function(day) {
                <div className={day.classes} id={day.id}><span className="day-number">{day.day}</span></div>
-              });
+              })
          );
        };
 
@@ -55,7 +55,7 @@ export default class Calendar extends React.Component {
                      <div className="event-item-name">{event.title}</div>
                      <div className="event-item-location">{event.location}</div>
                    </div>
-            });
+            })
          );
        };
 
@@ -67,8 +67,8 @@ export default class Calendar extends React.Component {
             <div id="full-clndr" className="clearfix">
             <script type="text/template" id="full-clndr-template">
             <div className="clndr-controls">
-                <div className="clndr-previous-button"> < </div>
-                <div className="clndr-next-button"> > </div>
+                <div className="clndr-previous-button">{' < '}</div>
+                <div className="clndr-next-button">{' > '}</div>
                 <div className="current-month">{month} {year}</div>
             </div>
             <div className="clndr-grid">
