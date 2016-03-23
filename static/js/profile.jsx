@@ -40,7 +40,7 @@ export default class Profile extends React.Component {
          let goal = <p>{this.props.profile_info.goal}: My goal is to workout. I like working out. So it would be good to workout.</p>
          return (
              <div className="profile_container">
-                 <h2 className="light">My Profile</h2>
+                 <h2 className="light center">My Profile</h2>
              <div className="center profile_main">
                 <div className="container section">
                     <div className="row">

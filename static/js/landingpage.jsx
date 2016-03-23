@@ -84,6 +84,7 @@ export default class LandingPage extends React.Component {
                             </ul>
                             <ul className="side-nav" id="mobile-view">
                                 {sideBarEle}
+                                <div className="divider"></div>
                                 <li><a href="#"><i className="material-icons left">chat</i><span className="black-text">Messages</span></a></li>
                                 <li><a href="#"><i className="material-icons left">notifications_none</i><span className="black-text">Notifications</span></a></li>
                                 <li><a id="nav_logout" href="/users/logout_user"><i className="material-icons left">forward</i>Log Out</a></li>
