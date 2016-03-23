@@ -33,12 +33,13 @@ export default class Finder extends React.Component {
          }.bind(this)
       });
    }
+
    render(){
       return (
          <div>
             <h2 className="center">Search Trainees</h2>
             <SearchBar onUserInput={this.searchForUser.bind(this)}  resetScreen={this.clearSearchResultData.bind(this)} />
-            <SearchResults searchResult={this.state.searchResultData} searchUserLevel={this.props.userLevel} removeFromList={this.removeFromListAfterAdd.bind(this)}/>
+            <SearchResults searchResult={this.state.searchResultData} searchUserLevel={this.props.userLevel}/>
          </div>
       );
    }

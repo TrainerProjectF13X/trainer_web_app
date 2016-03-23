@@ -19,7 +19,9 @@ export default class SearchResults extends React.Component {
          },
          success : function(){
             let removeVar = "#" + userName+"_card";
-            $(removeVar).remove();
+            $(removeVar).fadeOut(750, function(){
+                $(this).remove();
+            });
          }.bind(this),
          error: function(xhr, status, err) {
             console.error( status, err.toString());
