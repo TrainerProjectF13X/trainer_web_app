@@ -35,7 +35,7 @@ export default class Calendar extends React.Component {
        var el_daysOfTheWeek = function(ele, i){
            return(
                _.each(daysOfTheWeek, function(day) {
-                   <div class="header-day">{day}</div>
+                   <div className="header-day">{day}</div>
                });
             );
        };
@@ -43,7 +43,7 @@ export default class Calendar extends React.Component {
        var el_days =  function(ele, i){
           return(
              _.each(days, function(day) {
-               <div class={day.classes} id={day.id}><span class="day-number">{day.day}</span></div>
+               <div className={day.classes} id={day.id}><span className="day-number">{day.day}</span></div>
               });
          );
        };
@@ -51,9 +51,9 @@ export default class Calendar extends React.Component {
        var el_eventsThisMonth =  function(ele, i){
           return(
              _.each(eventsThisMonth, function(event) {
-                   <div class="event-item">
-                     <div class="event-item-name">{event.title}</div>
-                     <div class="event-item-location">{event.location}</div>
+                   <div className="event-item">
+                     <div className="event-item-name">{event.title}</div>
+                     <div className="event-item-location">{event.location}</div>
                    </div>
             });
          );
@@ -64,19 +64,19 @@ export default class Calendar extends React.Component {
             <h2 className="center light">Calendar</h2>
             <div className="parent-element white card-panel"></div>
 
-            <div id="full-clndr" class="clearfix">
+            <div id="full-clndr" className="clearfix">
             <script type="text/template" id="full-clndr-template">
-            <div class="clndr-controls">
-                <div class="clndr-previous-button"> < </div>
-                <div class="clndr-next-button"> > </div>
-                <div class="current-month">{month} {year}</div>
+            <div className="clndr-controls">
+                <div className="clndr-previous-button"> < </div>
+                <div className="clndr-next-button"> > </div>
+                <div className="current-month">{month} {year}</div>
             </div>
-            <div class="clndr-grid">
-                <div class="days-of-the-week clearfix">{el_daysOfTheWeek}</div>
-                <div class="days">{el_days}</div>
+            <div className="clndr-grid">
+                <div className="days-of-the-week clearfix">{el_daysOfTheWeek}</div>
+                <div className="days">{el_days}</div>
             </div>
-            <div class="event-listing">
-                <div class="event-listing-title">EVENTS THIS MONTH</div>
+            <div className="event-listing">
+                <div className="event-listing-title">EVENTS THIS MONTH</div>
                 {el_eventsThisMonth}
             </div>
             </script>
