@@ -20,26 +20,26 @@ export default class Finder extends React.Component {
    searchForUser(searchString){
       let searchQuery = this.props.userLevel === "TRAINER" ? "TRAINEE": "TRAINEER";
       $.ajax
-     ({
-          type : "GET",
-          url : "/api/find_users",
-          dataType: 'json',
-          data: {search_for : searchQuery, search_string : searchString},
-          success : function( recv_data ){
-             this.setState({searchResultData : recv_data});
-          }.bind(this),
-          error: function(xhr, status, err) {
-             console.error( status, err.toString());
-          }.bind(this)
-     });
+      ({
+         type : "GET",
+         url : "/api/find_users",
+         dataType: 'json',
+         data: {search_for : searchQuery, search_string : searchString},
+         success : function( recv_data ){
+            this.setState({searchResultData : recv_data});
+         }.bind(this),
+         error: function(xhr, status, err) {
+            console.error( status, err.toString());
+         }.bind(this)
+      });
    }
    render(){
       return (
          <div>
             <h2 className="center">Search Trainees</h2>
             <SearchBar onUserInput={this.searchForUser.bind(this)}  resetScreen={this.clearSearchResultData.bind(this)} />
-            <SearchResults results={this.state.searchResultData} searchUserLevel={this.props.userLevel} />
+            <SearchResults searchResult={this.state.searchResultData} searchUserLevel={this.props.userLevel} removeFromList={this.removeFromListAfterAdd.bind(this)}/>
          </div>
       );
-    }
+   }
 }

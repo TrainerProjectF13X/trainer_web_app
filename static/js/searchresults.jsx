@@ -6,7 +6,6 @@ import ProfileCard from './profilecard'
 export default class SearchResults extends React.Component {
    constructor(props) {
       super(props);
-
    }
    addPotentialClient(userName){
       $.ajax
@@ -19,19 +18,21 @@ export default class SearchResults extends React.Component {
             xhr.setRequestHeader('X-CSRFToken', Cookies.get('csrftoken'));
          },
          success : function(){
-
-         },
+            let removeVar = "#" + userName+"_card";
+            $(removeVar).remove();
+         }.bind(this),
          error: function(xhr, status, err) {
             console.error( status, err.toString());
          }.bind(this)
       });
    }
    render(){
-      console.log(this.props.results);
-      var content =  this.props.results.map(function(ele, i){
+      console.log(this.props.searchResult);
+      var content =  this.props.searchResult.map(function(ele, i){
          let boundClick = this.addPotentialClient.bind(this, ele.user.username);
+         let card_id = ele.user.username + "_card";
          return(
-            <div className="col s12 m6 l4" key={i} >
+            <div className="col s12 m6 l4" key={i} id={card_id}>
                 <div className="card">
                 <ProfileCard user={ele} eleIndex ={i} searchUserLevel={this.props.searchUserLevel}/>
                 <div className="card-action">
