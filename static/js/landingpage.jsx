@@ -64,7 +64,7 @@ export default class LandingPage extends React.Component {
         },this);
         let contentDisplay = <Content curContent={this.state.sideBarContents[this.state.curElement]} curUser={this.state.curUser}/>
         return (
-            <div>
+            <div className="landing_container">
                 <div className="navbar-fixed">
                     <nav>
                         <div className="nav-wrapper grey darken-4">
@@ -83,20 +83,18 @@ export default class LandingPage extends React.Component {
                                 {sideBarEle}
                             </ul>
                             <ul className="side-nav" id="mobile-view">
+                                {sideBarEle}
                                 <li><a href="#"><i className="material-icons left">chat</i><span className="black-text">Messages</span></a></li>
                                 <li><a href="#"><i className="material-icons left">notifications_none</i><span className="black-text">Notifications</span></a></li>
-                                {sideBarEle}
-                                <li><a id="nav_logout" href="/users/logout_user"><i className="material-icons left">call_made</i>Log Out</a></li>
+                                <li><a id="nav_logout" href="/users/logout_user"><i className="material-icons left">forward</i>Log Out</a></li>
                             </ul>
                         </div>
                     </nav>
                 </div>
-                <div className="content-panel-parent grey lighten-5">
+                <div className="content-panel-parent">
                     <main>
-                        <div className="container grey lighten-5">
-                            <div className="row">
-                                {contentDisplay}
-                            </div>
+                        <div className="">
+                            {contentDisplay}
                         </div>
                     </main>
                 </div>
