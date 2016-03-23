@@ -41,7 +41,7 @@ export default class LandingPage extends React.Component {
                     curElement: 0,
                     sideBarContents: (recv_data.level === "TRAINER") ?
                     ["My Profile", "My Trainees", "Calendar", "Saved Workouts", "Trainee Nearby", "Settings"] :
-                    ["My Profile", "Calendar", "Saved Workouts", "Progress", "Settings"]
+                    ["My Profile", "Calendar", "Saved Workouts", "Progress", "Trainers Nearby" ,"Settings"]
                 };
             }.bind(this),
             error: function (xhr, status, err) {

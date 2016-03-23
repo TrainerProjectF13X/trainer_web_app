@@ -55,19 +55,64 @@ def api_get_user(request, format=None):
 @permission_classes((IsAuthenticated, ))
 def api_find_users(request, format=None):
     if request.method == 'GET':
+        #Sent with the AJAX request
         search_for = request.GET['search_for']
         search_string = request.GET['search_string']
+
+        #Alias for our user
+        current_user = request.user
         if search_for == 'TRAINEE':
+            #Get the trainer this is used for a later query.
+            #Fail out if not found.
+            try:
+                trainer = current_user.traineraccount
+            except ObjectDoesNotExist:
+                HttpResponse('Unauthorized', status=401)
+
+            #Find all searchable Users who do not have a trainer.
             qs = RegularAccount.objects.filter(is_searchable=True).filter(trainer__isnull=True)
+            #A super basic search Query for now.
             qs = qs.filter(Q(user__email__icontains      = search_string) |
                            Q(user__username__icontains   = search_string))
+
+            #Now loop through valid results in order to ensure that
+            #1. A person that a trainer has asked to train does not show up again.
+            #2. A user has asked for this particular trainer does not appear.
+            for ele in qs:
+                #Trainer has already asked this person
+                if TrainerAskUserToken.objects.filter(rglr_user=ele, trainer=trainer).exists():
+                    qs = qs.exclude(user__username=ele.user.username)
+                #The User has asked the Trainer already and the results is pending.
+                elif UserAskTrainerToken.objects.filter(rglr_user=ele,trainer=trainer).exists():
+                    qs = qs.exclude(user__username=ele.user.username)
+
+
             serialized_data = RegularUserProfileViewSerialer(qs, many=True, read_only=True).data
             serialized_data = JSONRenderer().render(serialized_data)
             return HttpResponse(serialized_data, content_type='application/json')
         else:
+            #Get the Regular User this is used for a later query.
+            #Fail out if not found.
+            try:
+                rglr_user = current_user.regularaccount
+            except ObjectDoesNotExist:
+                HttpResponse('Unauthorized', status=401)
+
             qs = TrainerAccount.objects.all()
             qs = qs.filter(Q(user__email__icontains      = search_string) |
                            Q(user__username__icontains   = search_string))
+
+            #Now loop through valid results in order to ensure that
+            #1. A person that a trainer has asked to train does not show up again.
+            #2. A user has asked for this particular trainer does not appear.
+            for ele in qs:
+                #Trainer has already asked this person and result is pending
+                if TrainerAskUserToken.objects.filter(rglr_user=rglr_user, trainer=ele).exists():
+                    qs = qs.exclude(user__username=ele.user.username)
+                #The User has asked the Trainer already and the results is pending.
+                elif UserAskTrainerToken.objects.filter(rglr_user=rglr_user,trainer=ele).exists():
+                    qs = qs.exclude(user__username=ele.user.username)
+
             serialized_data = TrainerProfileViewSerialer(qs, many=True, read_only=True).data
             serialized_data = JSONRenderer().render(serialized_data)
             return HttpResponse(serialized_data, content_type='application/json')
