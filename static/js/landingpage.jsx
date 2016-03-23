@@ -69,7 +69,11 @@ export default class LandingPage extends React.Component {
                     <nav>
                         <div className="nav-wrapper grey darken-4">
                             <a id="logo-container" href="#" className="brand-logo center"><img className="logo_nav landing" src={logo_white}/></a>
-                            <a className="right" href="/users/logout_user">LOGOUT</a>
+                                  <ul className="right hide-on-med-and-down">
+                                      <li><a href="#"><i className="material-icons">chat</i></a></li>
+                                      <li><a href="#"><i className="material-icons">notifications_none</i></a></li>
+                                      <li><a id="nav_logout" href="/users/logout_user">LOG OUT</a></li>
+                                  </ul>
                             <a href="#" data-activates="mobile-view" className="button-collapse"><i className="material-icons">menu</i></a>
                             <ul className="side-nav fixed">
                                 <li className="logo"><a id="logo-container" href="#" className="brand-logo center">
@@ -79,14 +83,17 @@ export default class LandingPage extends React.Component {
                                 {sideBarEle}
                             </ul>
                             <ul className="side-nav" id="mobile-view">
+                                <li><a href="#"><i className="material-icons left">chat</i></a><span className="black-text">Messages</span></li>
+                                <li><a href="#"><i className="material-icons left">notifications_none</i></a><span className="black-text">Notifications</span></li>
                                 {sideBarEle}
+                                <li><a id="nav_logout" href="/users/logout_user">LOG OUT</a></li>
                             </ul>
                         </div>
                     </nav>
                 </div>
                 <div className="content-panel-parent grey lighten-5">
                     <main>
-                        <div className="container">
+                        <div className="container grey lighten-5">
                             <div className="row">
                                 {contentDisplay}
                             </div>
