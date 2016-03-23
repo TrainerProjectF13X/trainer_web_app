@@ -14,8 +14,10 @@ export default class Workouts extends React.Component {
         return (
     <div>
         <h3 className="center light">My Workouts</h3>
-
-
+        <div className="fixed-action-btn horizontal">
+        <a className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">add</i></a>
+        </div>
+        <br></br>
         <ul className="collapsible" data-collapsible="expandable">
             <li>
                 <div className="collapsible-header">

@@ -72,7 +72,7 @@ export default class LandingPage extends React.Component {
                                   <ul className="right hide-on-med-and-down">
                                       <li><a href="#"><i className="material-icons">chat</i></a></li>
                                       <li><a href="#"><i className="material-icons">notifications_none</i></a></li>
-                                      <li><a id="nav_logout" href="/users/logout_user">LOG OUT</a></li>
+                                      <li><a id="nav_logout" href="/users/logout_user">Log Out</a></li>
                                   </ul>
                             <a href="#" data-activates="mobile-view" className="button-collapse"><i className="material-icons">menu</i></a>
                             <ul className="side-nav fixed">
@@ -83,10 +83,10 @@ export default class LandingPage extends React.Component {
                                 {sideBarEle}
                             </ul>
                             <ul className="side-nav" id="mobile-view">
-                                <li><a href="#"><i className="material-icons left">chat</i></a><span className="black-text">Messages</span></li>
-                                <li><a href="#"><i className="material-icons left">notifications_none</i></a><span className="black-text">Notifications</span></li>
+                                <li><a href="#"><i className="material-icons left">chat</i><span className="black-text">Messages</span></a></li>
+                                <li><a href="#"><i className="material-icons left">notifications_none</i><span className="black-text">Notifications</span></a></li>
                                 {sideBarEle}
-                                <li><a id="nav_logout" href="/users/logout_user">LOG OUT</a></li>
+                                <li><a id="nav_logout" href="/users/logout_user"><i className="material-icons left">call_made</i>Log Out</a></li>
                             </ul>
                         </div>
                     </nav>
