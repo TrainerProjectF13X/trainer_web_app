@@ -8,6 +8,7 @@ export default class Workouts extends React.Component {
     }
     componentDidMount(){
       $('.collapsible').collapsible({ accordion : false });
+      $('.modal-trigger').leanModal();
     }
 
     render(){
@@ -15,8 +16,18 @@ export default class Workouts extends React.Component {
     <div className="container">
         <h2 className="center light">My Workouts</h2>
         <div className="fixed-action-btn horizontal">
-        <a className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">add</i></a>
+
+        <a className="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modal1"><i className="material-icons">add</i></a>
         </div>
+         <div id="modal1" className="modal">
+           <div className="modal-content">
+             <h4>Modal Header</h4>
+             <p>A bunch of text</p>
+           </div>
+           <div className="modal-footer">
+             <a href="#!" className=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+           </div>
+         </div>
         <br></br>
         <ul className="collapsible white" data-collapsible="expandable">
             <li>
