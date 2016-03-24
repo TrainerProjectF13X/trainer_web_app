@@ -20,7 +20,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^', include('users.urls')),
     url(r'^api/', include('users.api.urls')),
-    url(r'^workout_api/', include('workouts.workout_api.urls')),
+   # url(r'^workout_api/', include('workouts.workout_api.urls')),
     url(r'^users/', include('users.urls')),
     url(r'^admin/', admin.site.urls),
 ]
