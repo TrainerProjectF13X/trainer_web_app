@@ -112,6 +112,8 @@ def api_find_users(request, format=None):
                 #The User has asked the Trainer already and the results is pending.
                 elif UserAskTrainerToken.objects.filter(rglr_user=rglr_user,trainer=ele).exists():
                     qs = qs.exclude(user__username=ele.user.username)
+                elif rglr_user.trainer == ele:
+                    qs = qs.exclude(user__username=ele.user.username)
 
             serialized_data = TrainerProfileViewSerialer(qs, many=True, read_only=True).data
             serialized_data = JSONRenderer().render(serialized_data)

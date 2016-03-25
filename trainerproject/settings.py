@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'webpack_loader',
+    'autofixture',
 ]
 
 REST_FRAMEWORK = {
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'trainerproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-
+'''
 DATABASES = {
       'default': {
           'ENGINE': 'django.db.backends.sqlite3',
@@ -91,11 +92,11 @@ DATABASES = {
         'NAME': os.environ.get('DATABASE_NAME'),
         'USER': os.environ.get('DATABASE_USER_NAME'),
         'PASSWORD': os.environ.get('DATABASE_USER_PASSWORD'),
-        'HOST': 'localhost',
-        'PORT': '5431',
+        'HOST': '',
+        'PORT': '',
     }
 }
-'''
+
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
