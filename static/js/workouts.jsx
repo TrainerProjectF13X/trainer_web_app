@@ -20,7 +20,7 @@ export default class Workouts extends React.Component {
       $.ajax
       ({
          type : "GET",
-         url : "/workout_api/get_workouts",
+         url : "/workout_api/get_userwithworkouts",
          dataType: 'json',
          success : function( data ){
            console.log("success", data);
