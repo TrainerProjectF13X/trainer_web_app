@@ -41,8 +41,8 @@ export default class CurrentTrainees extends React.Component {
         );
       }, this);
       return (
-         <div>
-            <h2 className="center">Current Trainees</h2>
+         <div className="container">
+            <h2 className="center light">Current Trainees</h2>
             <div className="row">
             {clients}
             </div>

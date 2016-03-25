@@ -38,7 +38,7 @@ export default class Finder extends React.Component {
       let word = this.props.userLevel === "TRAINER" ? "Trainees": "Trainer";
       return (
          <div>
-            <h2 className="center">Search for {word}</h2>
+            <h2 className="center light">Search for {word}</h2>
             <SearchBar onUserInput={this.searchForUser.bind(this)}  resetScreen={this.clearSearchResultData.bind(this)} />
             <SearchResults searchResult={this.state.searchResultData} searchUserLevel={this.props.userLevel}/>
          </div>

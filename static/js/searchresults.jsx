@@ -35,7 +35,7 @@ export default class SearchResults extends React.Component {
          let card_id = ele.user.username + "_card";
          return(
             <div className="col s12 m6 l4" key={i} id={card_id}>
-                <div className="card">
+                <div className="card hoverable">
                 <ProfileCard user={ele} eleIndex ={i} searchUserLevel={this.props.searchUserLevel}/>
                 <div className="card-action">
                 <button className="btn waves-effect waves-light orange" type="submit" name="action" onClick={boundClick} >Add<i className="material-icons right">add</i></button>

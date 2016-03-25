@@ -119,6 +119,16 @@ def api_find_users(request, format=None):
     return HttpResponse('Unauthorized', status=401)
 
 
+@api_view(['GET'])
+@authentication_classes((SessionAuthentication, ))
+@permission_classes((IsAuthenticated, ))
+def api_get_tokens(request, format=None):
+    if request.method == 'GET':
+        level = request.GET['level']
+        return HttpResponse(status=201)
+
+    return HttpResponse('Unauthorized', status=401)
+
 @api_view(['POST'])
 @authentication_classes((SessionAuthentication, ))
 @permission_classes((IsAuthenticated, ))

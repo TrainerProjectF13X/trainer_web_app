@@ -14,9 +14,9 @@ export default class Calendar extends React.Component {
    }
    render(){
       return (
-         <div>
-            <h2 className="center">Calendar</h2>
-            <div className="parent-element"></div>
+         <div className="container">
+            <h2 className="center light">Calendar</h2>
+            <div className="parent-element white card-panel"></div>
          </div>
       );
    }

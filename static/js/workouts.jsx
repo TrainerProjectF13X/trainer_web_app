@@ -12,13 +12,13 @@ export default class Workouts extends React.Component {
 
     render(){
         return (
-    <div>
-        <h3 className="center light">My Workouts</h3>
+    <div className="container">
+        <h2 className="center light">My Workouts</h2>
         <div className="fixed-action-btn horizontal">
         <a className="btn-floating btn-large waves-effect waves-light red"><i className="material-icons">add</i></a>
         </div>
         <br></br>
-        <ul className="collapsible" data-collapsible="expandable">
+        <ul className="collapsible white" data-collapsible="expandable">
             <li>
                 <div className="collapsible-header">
                     <h4>Good. morning, <span className="red-text">abs</span></h4>
@@ -47,7 +47,7 @@ export default class Workouts extends React.Component {
             </li>
         </ul>
 
-        <ul className="collapsible" data-collapsible="expandable">
+        <ul className="collapsible white" data-collapsible="expandable">
             <li>
                 <div className="collapsible-header">
                     <h4>DAMAGE CONTROL</h4>
@@ -81,7 +81,7 @@ export default class Workouts extends React.Component {
             </li>
         </ul>
 
-        <ul className="collapsible" data-collapsible="expandable">
+        <ul className="collapsible white" data-collapsible="expandable">
             <li>
                 <div className="collapsible-header">
                     <h4>Hightail</h4>
@@ -112,7 +112,7 @@ export default class Workouts extends React.Component {
             </li>
         </ul>
 
-        <ul className="collapsible" data-collapsible="expandable">
+        <ul className="collapsible white" data-collapsible="expandable">
             <li>
                 <div className="collapsible-header">
                     <h4>SLAM <span className="red-text">DUNK</span></h4>
@@ -142,8 +142,7 @@ export default class Workouts extends React.Component {
             </li>
         </ul>
 
-
-    </div>
+</div>
         );
     }
 }
