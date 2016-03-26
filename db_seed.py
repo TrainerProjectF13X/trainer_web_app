@@ -103,7 +103,12 @@ class SeedDatabase(object):
                     if not free_users:
                         print("There are currently no free users please create some then rerun")
                         return
-                    str(input("Out of {} unassigned accounts how many would you like to assign? ").format(len(free_users)))
+                    num = len(free_users) + 1
+                    while num > len(free_users):
+                        num = int(input("Out of {} unassigned accounts how many would you like to assign? ".format(len(free_users))))
+                    for i in range(0,num):
+                        free_users[i].trainer = trainer
+                        free_users[i].save()
             else:
                 print("#TODO#")
             assign = str(input("Would you like to assign a trainer a client\s? ")).lower()
