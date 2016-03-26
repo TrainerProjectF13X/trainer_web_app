@@ -26,11 +26,24 @@ export default class Profile extends React.Component {
                           <div className="valign">
                               <h5>Test Trainer</h5>
                               <p className="light grey-text">trainer@test.test</p>
-                              <p>{profile}</p>
-                              <p>{pastExperience}</p>
+                              {profile}
+                              {pastExperience}
                           </div>
                       </div>
                   </div>
+               </div>
+            </div>
+            <div className="section white">
+               <div className="row container">
+                   <div className="col s12 m6">
+                       <h4>{'My Stuff'}</h4>
+                       <p>{' Lots of stuff'}</p>
+                   </div>
+                   <div className="col s12 m6">
+                       <h4>More Stuff</h4>
+                       <p>Stuff</p>
+                   </div>
+
                </div>
             </div>
         </div>
@@ -49,11 +62,24 @@ export default class Profile extends React.Component {
                            <div className="valign">
                                <h5>Test Trainee</h5>
                                <p className="light grey-text">trainee@test.test</p>
-                               <p>{profile}</p>
-                               <p>{goal}</p>
+                               {profile}
+                               {goal}
                            </div>
                        </div>
                    </div>
+                </div>
+             </div>
+             <div className="section white">
+                <div className="row container">
+                    <div className="col s12 m6">
+                        <h4>{'My Stuff'}</h4>
+                        <p>{' Lots of stuff'}</p>
+                    </div>
+                    <div className="col s12 m6">
+                        <h4>More Stuff</h4>
+                        <p>Stuff</p>
+                    </div>
+
                 </div>
              </div>
          </div>

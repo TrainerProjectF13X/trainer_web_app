@@ -28,6 +28,7 @@ module.exports = {
          'window.jQuery': 'jquery',
          _: 'underscore',
          moment: 'moment',
+         fullCalendar: 'fullcalendar',
          clndr: 'clndr'
       })
    ],
