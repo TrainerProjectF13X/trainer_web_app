@@ -11,9 +11,12 @@ export default class Calendar extends React.Component {
    }
    componentDidMount(){
       $('.parent-element').clndr();
+
    }
    render(){
-      return (
+
+
+    return (
          <div className="container">
             <h2 className="center light">Calendar</h2>
             <div className="parent-element white card-panel"></div>

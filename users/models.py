@@ -16,7 +16,7 @@ class TrainerAccount(models.Model):
     profile = models.TextField(default="User Profile")  # larger
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False, null=True)
     past_experience = models.TextField(default="Past Experience")
-    profile_pic = models.ImageField(default="")
+    profile_pic = models.ImageField( blank=True, null=True)
     def get_absolute_url(self):
         return reverse("public_profile_page",kwargs={"pk":self.id})
 
@@ -28,7 +28,7 @@ class RegularAccount(models.Model):
     profile = models.TextField(default="User Profile")  # larger
     timestamp = models.DateTimeField(auto_now=True, auto_now_add=False, null=True)
     goal = models.TextField(default="Goal")
-    profile_pic = models.ImageField(default="")
+    profile_pic = models.ImageField(null=True,blank=True)
     is_searchable = models.BooleanField(default=True, null=False)
     def get_absolute_url(self):
         return reverse("public_profile_page",kwargs={"pk":self.id})

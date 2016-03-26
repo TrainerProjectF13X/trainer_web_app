@@ -47,7 +47,7 @@ export default class Settings extends React.Component {
 
       return(
          <div>
-            <h4 className="center grey-text">User Settings</h4>
+            <h4 className="center light grey-text">User Settings</h4>
             <h5>Searchable</h5>
             <div className="switch">
                <label>
@@ -60,7 +60,7 @@ export default class Settings extends React.Component {
          </div>);
    }
    trainerSettings(){
-      return(<h4 className="center grey-text">Trainer Settings</h4>);
+      return(<h4 className="center light grey-text">Trainer Settings</h4>);
    }
    render(){
       let settings = (this.state.curUser.level === "TRAINER" ? this.trainerSettings(): this.regularUserSettings());
