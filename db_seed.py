@@ -63,6 +63,7 @@ class SeedDatabase(object):
         for i in trainer_list:
             trainer = TrainerAccount.objects.create(user=ul[i],auth_token=self.create_token(ul[i]))
             trainer.save()
+        for i in trainer_list:
             ul.remove(ul[i])
 
     def create_reglr_user(self, ul):
@@ -73,7 +74,7 @@ class SeedDatabase(object):
 
     def create_token(self, user):
         while True:
-            hex_dig = hashlib.sha224(str(user.username)).encode('utf-8') +
+            hex_dig = hashlib.sha224(str(user.username).encode('utf-8') +
                                      str(user.email).encode('utf-8') +
                                      str(time.time()).encode('utf-8')).hexdigest()
             if not TrainerAccount.objects.filter(auth_token=hex_dig).exists() and not RegularAccount.objects.filter(auth_token=hex_dig).exists():
