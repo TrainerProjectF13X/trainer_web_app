@@ -46,7 +46,7 @@ export default class Calendar extends React.Component {
                     <h2 className="center light">Calendar</h2>
                     <div className="section">
                         <div className="row">
-                            <div className="col s12 l3 push-l9">
+                            <div className="calendar_controls col s12 l3 push-l9">
                                 <div className="section white card-panel">
                                     <h6>{'Date Range'}</h6>
                                     <div className="row">
