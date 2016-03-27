@@ -29,7 +29,8 @@ module.exports = {
          _: 'underscore',
          moment: 'moment',
          fullCalendar: 'fullcalendar',
-         clndr: 'clndr'
+         clndr: 'clndr',
+         react_big_calendar: 'react-big-calendar'
       })
    ],
 

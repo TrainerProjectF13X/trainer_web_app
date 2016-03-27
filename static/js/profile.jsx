@@ -19,7 +19,7 @@ export default class Profile extends React.Component {
             <div className="profile_container">
                 <h2 className="light center">My Profile</h2>
             <div className="center profile_main">
-               <div className="container section">
+               <div className="container">
                    <div className="row">
                        <div className="col s12 m6 l6">{profile_pic}</div>
                       <div className="left-align valign-wrapper col s12 m6 l6">
@@ -57,7 +57,7 @@ export default class Profile extends React.Component {
              <div className="profile_container">
                  <h2 className="light center">My Profile</h2>
              <div className="center profile_main">
-                <div className="container section">
+                <div className="container">
                     <div className="row">
                         <div className="col s12 m6 l6">{profile_pic}</div>
                        <div className="left-align valign-wrapper col s12 m6 l6">
