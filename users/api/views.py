@@ -86,7 +86,6 @@ def api_find_users(request, format=None):
                 elif UserAskTrainerToken.objects.filter(rglr_user=ele,trainer=trainer).exists():
                     qs = qs.exclude(user__username=ele.user.username)
 
-
             serialized_data = RegularUserProfileViewSerialer(qs, many=True, read_only=True).data
             serialized_data = JSONRenderer().render(serialized_data)
             return HttpResponse(serialized_data, content_type='application/json')
@@ -105,12 +104,15 @@ def api_find_users(request, format=None):
             #Now loop through valid results in order to ensure that
             #1. A person that a trainer has asked to train does not show up again.
             #2. A user has asked for this particular trainer does not appear.
+            #3. A this person is already being trained by that person
             for ele in qs:
                 #Trainer has already asked this person and result is pending
                 if TrainerAskUserToken.objects.filter(rglr_user=rglr_user, trainer=ele).exists():
                     qs = qs.exclude(user__username=ele.user.username)
                 #The User has asked the Trainer already and the results is pending.
                 elif UserAskTrainerToken.objects.filter(rglr_user=rglr_user,trainer=ele).exists():
+                    qs = qs.exclude(user__username=ele.user.username)
+                elif rglr_user.trainer == ele:
                     qs = qs.exclude(user__username=ele.user.username)
 
             serialized_data = TrainerProfileViewSerialer(qs, many=True, read_only=True).data
