@@ -33,8 +33,8 @@ export default class Profile extends React.Component {
                   </div>
                </div>
             </div>
-            <footer className="page-footer">
-            <div className="section white">
+            <footer className="page-footer white">
+            <div className="section">
                <div className="row container">
                    <div className="col s12 m6">
                        <h4>{'My Stuff'}</h4>
@@ -71,8 +71,8 @@ export default class Profile extends React.Component {
                    </div>
                 </div>
              </div>
-             <footer className="page-footer">
-             <div className="section white">
+             <footer className="page-footer white">
+             <div className="section">
                 <div className="row container">
                     <div className="col s12 m6">
                         <h4>{'My Stuff'}</h4>
