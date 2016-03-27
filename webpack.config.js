@@ -28,7 +28,9 @@ module.exports = {
          'window.jQuery': 'jquery',
          _: 'underscore',
          moment: 'moment',
-         clndr: 'clndr'
+         fullCalendar: 'fullcalendar',
+         clndr: 'clndr',
+         react_big_calendar: 'react-big-calendar'
       })
    ],
 
