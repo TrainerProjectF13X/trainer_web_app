@@ -33,40 +33,83 @@
   </div>
 
   <!--TODO: Change text on here -->
-  <div class="container">
-    <div class="section">
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center"><i class="large material-icons orange-text center">event</i></h2>
-            <h5 class="center">Speeds up development</h5>
 
-            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+  <section id="how_it_works" class="home">
+          <div class="container center-align"><a class="btn-floating right btn-large waves-effect waves-light z-depth-0" href="#how_it_works"><i class="medium material-icons">keyboard_arrow_down</i></a>
+            <div class="row">
+          <h2 class="center">How it works</h2>
           </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center"><i class="large material-icons orange-text center">group</i></h2>
-            <h5 class="center">User Experience Focused</h5>
-
-            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+          <div class="row">
+              <div class="col s12 m8 offset-m2">
+                  <ul class="tabs" style="width: 100%;">
+                      <li class="tab col s6 " style="width: 50%;"><a href="#trainer" class="active orange-text">I am a Trainer</a></li>
+                      <li class="tab col s6 orange-text" style="width: 50%;"><a href="#trainee" class="orange-text">I am a Trainee</a></li>
+                      <div class="indicator" style="right: 138px; left: 0px;"></div>
+                      <div class="indicator" style="right: 138px; left: 0px;"></div>
+                  </ul>
+              </div>
+              <div class="col s12" id="trainer">
+                  <div class="row">
+                      <div class="col s12 m4"><img class="responsive-image circle" src="{% static "img/icons/Dashboard.png" %}" alt="Dashboard icon">
+                          <h4>Track</h4>
+                          <p>Keep track of your own Trainees. Set up their workouts and see their progress online.</p>
+                      </div>
+                      <div class="col s12 m4"><img class="responsive-image circle" src="{% static "img/icons/Map.png" %}" alt="Map icon">
+                          <h4>Find</h4>
+                          <p>Find new potential trainees around your area. </p>
+                      </div>
+                      <div class="col s12 m4"><img class="responsive-image circle" src="{% static "img/icons/Calendar.png" %}" alt="Calendar icon">
+                          <h4>Schedule</h4>
+                          <p>Keep track of all your personal and trainee workout schedules.</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col s12" id="trainee" style="display: none;">
+                  <div class="row">
+                      <div class="col s12 m4"><img class="responsive-image circle" src="{% static "img/icons/Chart.png" %}" alt="Chart icon">
+                          <h4>Progress</h4>
+                          <p>Keep track of your progress, whether it may be about your physical stats or workout goals.</p>
+                      </div>
+                      <div class="col s12 m4"><img class="responsive-image circle" src="{% static "img/icons/Search.png" %}" alt="Search icon">
+                          <h4>Search</h4>
+                          <p>Find Trainers in your area that fit your own personal goals and needs.</p>
+                      </div>
+                      <div class="col s12 m4"><img class="responsive-image circle" src="{% static "img/icons/Trophy.png" %}" alt="Trophy icon">
+                          <h4>Goals</h4>
+                          <p>Reach your goals with the toolset we provide. We will streamline the whole journey with our app.</p>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center"><i class="large material-icons orange-text center">settings</i></h2>
-            <h5 class="center">Easy to work with</h5>
-
-            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
-          </div>
-        </div>
       </div>
+  </section>
 
-    </div>
-  </div>
+
+  <footer class="page-footer grey darken-3">
+      <div class="container ">
+          <div class="row">
+              <div class="col l6 s12">
+                  <div class="row">
+                      <div class="col s3">
+                          <a href="/"><img class="responsive-img" src="{% static "img/f13x_logo_allwhite_lg.png" %}"></a>
+                      </div>
+                  </div>
+                  <p class="grey-text text-lighten-1 light">Looking for a better way to track your workout life? F13X is a service that helps connect trainers and trainees so that they can focus on more important things - your ultimate workout goals.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                  <h5 class="grey-text text-lighten-3">Let's Do This</h5>
+                  <ul>
+                      <li><a href="https://github.com/TrainerProjectF13X/trainer_web_app">Github</a></li>
+                      <li><a href="/#how_it_works">How It Works</a></li>
+                      <li><a href="{% url 'sign_up' %}">Sign Up</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="footer-copyright grey darken-4">
+          <div class="container">F13X Workout App<span class="right">Made by Chris, JooHee, Rex, Seed, and Yifu</span></div>
+      </div>
+  </footer>
 
 <script type="text/javascript">
 (function($){

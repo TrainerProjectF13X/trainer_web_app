@@ -15,7 +15,7 @@ export default class SideBarEle extends React.Component {
             "Saved Workouts"    : <i className="material-icons left">storage</i>,
             "Progress"          : <i className="material-icons left">equalizer</i>,
             "My Trainees"       : <i className="material-icons left">contacts</i>,
-            "Trainees Nearby"   : <i className="material-icons left">near_me</i>,
+            "Trainee Nearby"   : <i className="material-icons left">near_me</i>,
             "Trainers Nearby"   : <i className="material-icons left">near_me</i>,
             "Settings"          : <i className="material-icons left">settings</i>
         };
