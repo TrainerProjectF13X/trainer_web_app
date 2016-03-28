@@ -221,7 +221,7 @@ def add_client_to_trainer(request, format=None):
         token_id = request.POST['token_id']
         try:
             regular_user = current_user.regularaccount
-            trainer = UserAskTrainerToken.objects.get(id=token_id).trainer
+            trainer = TrainerAskUserToken.objects.get(id=token_id).trainer
             regular_user.trainer = trainer
             regular_user.save()
             UserAskTrainerToken.objects.filter(rglr_user=regular_user).delete()
