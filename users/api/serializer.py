@@ -58,13 +58,17 @@ class TrainerProfileViewSerializer(serializers.ModelSerializer):
 #This Serializer is for getting the information from tokens that where sent
 #by a Trainer to a prospective User.
 class TrainerAskUserTokenSerializer(serializers.ModelSerializer):
+    trainer_account = TrainerProfileViewSerializer(source='trainer')
+    user_account = RegularUserProfileViewSerializer(source='rglr_user')
     class Meta:
         model = TrainerAskUserToken
-        fields=('id','trainer','rglr_user')
+        fields=('id','user_account','trainer_account')
 
 #This Serializer is for getting the information from tokens that where sent
 #by a User to a prospecitve Trainer.
 class UserAskTrainerTokenSerializer(serializers.ModelSerializer):
+    trainer_account = TrainerProfileViewSerializer(source='trainer')
+    user_account = RegularUserProfileViewSerializer(source='rglr_user')
     class Meta:
         model = UserAskTrainerToken
-        fields=('id','trainer','rglr_user')
+        fields=('id','user_account','trainer_account')

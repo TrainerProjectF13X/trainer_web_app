@@ -210,3 +210,13 @@ def api_training_request(request, format=None):
         except ObjectDoesNotExist:
             pass
     return HttpResponse('Unauthorized', status=401)
+
+
+@api_view(['POST'])
+@authentication_classes((SessionAuthentication, ))
+@permission_classes((IsAuthenticated, ))
+def add_client_to_trainer(request, format=None):
+    if request.method == 'POST':
+        search_username = request.POST['token_id']
+        return HttpResponse(status=201)
+    return HttpResponse('Unauthorized', status=401)
