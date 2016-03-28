@@ -8,28 +8,25 @@ export default class SearchResults extends React.Component {
       super(props);
    }
    addPotentialClient = (userName) =>{
-      console.log(userName)
-      /*
       $.ajax
       ({
-      type : "POST",
-      url : "/api/training_request",
-      dataType: 'text',
-      data: {'username' : userName},
-      beforeSend: function(xhr) {
-      xhr.setRequestHeader('X-CSRFToken', Cookies.get('csrftoken'));
-      },
-      success : function(){
-      let removeVar = "#" + userName+"_card";
-      $(removeVar).addClass("animated fadeOutUp");
-      //$(removeVar).remove();
-
-      }.bind(this),
-      error: function(xhr, status, err) {
-      console.error( status, err.toString());
-      }.bind(this)
+         type : "POST",
+         url : "/api/training_request",
+         dataType: 'text',
+         data: {'username' : userName},
+         beforeSend: function(xhr) {
+            xhr.setRequestHeader('X-CSRFToken', Cookies.get('csrftoken'));
+         },
+         success : function(){
+            let removeVar = "#" + userName+"_card";
+            $(removeVar).fadeOut(750, function(){
+               $(this).remove();
+            });
+         }.bind(this),
+         error: function(xhr, status, err) {
+            console.error( status, err.toString());
+         }.bind(this)
       });
-      */
    }
    render(){
       console.log(this.props.searchResult);

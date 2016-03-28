@@ -4,18 +4,40 @@ var ReactDOM = require('react-dom')
 import profile_default from '../img/profile_default.png';
 
 export default class Profile extends React.Component {
-   constructor(props) {    /* Note props is passed into the constructor in order to be used */
+   constructor(props) {
       super(props);
+      this.state = {sentRequest : [], recievedRequest : []};
+      this.getTokenInfo();
+   }
 
+   getTokenInfo = () =>{
+      $.ajax
+      ({
+         type : "GET",
+         url : "/api/get_pending_tokens",
+         dataType: 'text',
+         data: {'level' : this.props.profile_info.level},
+         success : function(recv_data){
+            console.log(recv_data);
+         }.bind(this),
+         error: function(xhr, status, err) {
+            console.error( status, err.toString());
+         }.bind(this)
+      });
    }
 
    render(){
       let level = this.props.profile_info.level
       let profile_pic = <img className="profile_image responsive-img z-depth-2" src={profile_default} alt="Profile Pic"></img>
       let profile = <p>{this.props.profile_info.profile} This is my profile information. I am very interesting. I like to workout.</p>
-
       let prog_70 = {width: '70%'};
-
+      /*
+      let recievedRequestContent = this.state.recievedRequest.map((ele, i) => {
+         //Prolly need like token number
+         //onClick={ () => {this.()}
+         return();
+      });
+      */
       if(level === "TRAINER"){
          let pastExperience = <p>{this.props.profile_info.past_experience}: I have much experience in working out because I workout a lot</p>
          return (

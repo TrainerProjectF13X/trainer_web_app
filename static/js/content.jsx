@@ -37,7 +37,7 @@ export default class Content extends React.Component {
       else if(this.props.curContent === "Saved Workouts"){
          display = <Workouts />;
       }
-      else if(this.props.curContent === "Trainee Nearby" || this.props.curContent === "Trainers Nearby"){
+      else if(this.props.curContent === "Trainees Nearby" || this.props.curContent === "Trainers Nearby"){
          display = <Finder userLevel={this.props.curUser.level} />;
       }
       else if(this.props.curContent === "Progress"){
