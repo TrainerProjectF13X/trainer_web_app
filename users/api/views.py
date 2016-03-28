@@ -217,6 +217,26 @@ def api_training_request(request, format=None):
 @permission_classes((IsAuthenticated, ))
 def add_client_to_trainer(request, format=None):
     if request.method == 'POST':
-        search_username = request.POST['token_id']
-        return HttpResponse(status=201)
+        current_user = request.user
+        token_id = request.POST['token_id']
+        try:
+            regular_user = current_user.regularaccount
+            trainer = UserAskTrainerToken.objects.get(id=token_id).trainer
+            regular_user.trainer = trainer
+            regular_user.save()
+            UserAskTrainerToken.objects.filter(rglr_user=regular_user).delete()
+            TrainerAskUserToken.objects.filter(rglr_user=regular_user).delete()
+            return HttpResponse(status=201)
+        except ObjectDoesNotExist:
+            pass
+        try:
+            trainer = current_user.traineraccount
+            regular_user = UserAskTrainerToken.objects.get(id=token_id).rglr_user
+            regular_user.trainer = trainer
+            regular_user.save()
+            UserAskTrainerToken.objects.filter(rglr_user=regular_user).delete()
+            TrainerAskUserToken.objects.filter(rglr_user=regular_user).delete()
+            return HttpResponse(status=201)
+        except ObjectDoesNotExist:
+            pass
     return HttpResponse('Unauthorized', status=401)

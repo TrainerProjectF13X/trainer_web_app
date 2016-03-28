@@ -32,9 +32,15 @@ export default class Profile extends React.Component {
          type : "POST",
          url : "/api/add_client_to_trainer",
          dataType: 'text',
-         data: {'token_id' : this.tokenId},
+         data: {'token_id' : tokenId},
+         beforeSend: function(xhr) {
+            xhr.setRequestHeader('X-CSRFToken', Cookies.get('csrftoken'));
+         },
          success : function(){
-
+            let removeVar = "#" + idName;
+            $(removeVar).fadeOut(750, function(){
+               $(this).remove();
+            });
          }.bind(this),
          error: function(xhr, status, err) {
             console.error( status, err.toString());
@@ -246,7 +252,6 @@ export default class Profile extends React.Component {
                        <h4>Sent Request</h4>
                        <p>{sentRequestContent}</p>
                    </div>
-
                </div>
             </div>
             </footer>
@@ -277,14 +282,13 @@ export default class Profile extends React.Component {
              <div className="section">
                 <div className="row container">
                     <div className="col s12 m6">
-                        <h4>{'My Stuff'}</h4>
-                        <p>{' Lots of stuff'}</p>
+                        <h4>Request to Train</h4>
+                        <p>{recievedRequestContent}</p>
                     </div>
                     <div className="col s12 m6">
-                        <h4>More Stuff</h4>
-                        <p>Stuff</p>
+                        <h4>Sent Request</h4>
+                        <p>{sentRequestContent}</p>
                     </div>
-
                 </div>
              </div>
          </footer>
