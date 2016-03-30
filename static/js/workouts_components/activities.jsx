@@ -21,7 +21,7 @@ export default class Activity extends React.Component {
 
             <div >
                 <li className="collection-item">10 <span className="light grey-text"> {activity.detail}</span></li>
-                <li className="collection-item">10<span className="light grey-text">-count raised leg hold</span></li>
+
             </div>
         );
 

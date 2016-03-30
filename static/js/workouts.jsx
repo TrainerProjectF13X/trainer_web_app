@@ -6,12 +6,12 @@ export default class Workouts extends React.Component {
         super(props);
 
         this.getWorkouts();
-        $('.collapsible').collapsible({ accordion : false });
+        $('.collapsible').collapsible({accordion: false});
         $('.modal-trigger').leanModal();
     }
 
     componentDidMount() {
-     $('.collapsible').collapsible({ accordion : false });
+        $('.collapsible').collapsible({accordion: false});
         $('.modal-trigger').leanModal();
     }
 
@@ -65,7 +65,7 @@ export default class Workouts extends React.Component {
             //console.log("activities in parent",ele.activities)
             return (
 
-                <div className="each child" key={i}>
+                <div className="each workout" key={i}>
                     <ul className="collapsible white" data-collapsible="expandable">
                         <li>
                             <div className="collapsible-header">
@@ -76,9 +76,9 @@ export default class Workouts extends React.Component {
                                     REST <span className="light grey-text"> upto 2 minutes </span>
                                 </h6>
                             </div>
-                            <div className="individual_workout">
-                                <Workout activities={ele.activities} eleIndex={i}/>
-                            </div>
+
+                            <Workout activities={ele.activities} eleIndex={i}/>
+
                         </li>
 
                         <li className="collapsible-header">
@@ -92,7 +92,7 @@ export default class Workouts extends React.Component {
         }, this);
         return (
             <div className="container">
-                  <h2 className="center light">My Workouts</h2>
+                <h2 className="center light">My Workouts</h2>
                 <div className="fixed-action-btn horizontal">
 
                     <a className="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modal1"><i
@@ -142,7 +142,7 @@ export default class Workouts extends React.Component {
                 </div>
                 <br></br>
 
-                    {saved_workouts};
+                {saved_workouts}
 
             </div>
         );

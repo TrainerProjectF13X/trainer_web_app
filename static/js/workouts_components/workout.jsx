@@ -35,9 +35,7 @@ export default class Workout extends React.Component {
 
             <div className="collapsible-body">
                 <ul className="collection">
-                    <li className="collection-item">40 <span className="light grey-text">march steps</span>
-                    </li>
-                    {saved_activities};
+                    {saved_activities}
 
                 </ul>
             </div>
