@@ -14,6 +14,10 @@ export default class Workout extends React.Component {
 
     }
 
+    componentDidMount() {
+     $('.collapsible').collapsible({ accordion : false });
+        $('.modal-trigger').leanModal();
+    }
     render() {
         let activities = this.props.activities;
 
