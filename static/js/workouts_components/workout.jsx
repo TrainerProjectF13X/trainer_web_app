@@ -8,6 +8,9 @@ import Activity from "./activities.jsx"
 export default class Workout extends React.Component {
     constructor(props) {
         super(props);
+        $('.collapsible').collapsible({accordion: false});
+        $('.modal-trigger').leanModal();
+
 
     }
 
@@ -28,7 +31,10 @@ export default class Workout extends React.Component {
 
             <div className="collapsible-body">
                 <ul className="collection">
+                    <li className="collection-item">40 <span className="light grey-text">march steps</span>
+                    </li>
                     {saved_activities};
+
                 </ul>
             </div>
 

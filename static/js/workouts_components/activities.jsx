@@ -8,7 +8,8 @@ var ReactDOM = require('react-dom')
 export default class Activity extends React.Component {
     constructor(props) {
         super(props);
-
+        $('.collapsible').collapsible({accordion: false});
+        $('.modal-trigger').leanModal();
     }
 
     render() {
