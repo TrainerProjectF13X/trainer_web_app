@@ -9,6 +9,7 @@ export default class CurrentTrainees extends React.Component {
       this.state = {curClients: this.props.curClients};
    }
    componentDidMount(){
+      this.updateClients();
       this.internval = setInterval(this.updateClients.bind(this), this.props.pollInterval);
    }
    componentWillUnmount(){
@@ -33,9 +34,9 @@ export default class CurrentTrainees extends React.Component {
    render(){
       let clients = this.state.curClients.map(function (ele, i) {
          return (
-             <div className="col s12 m6 l4">
+             <div className="col s12 m6 l4" key={i}>
                  <div className="card">
-                     <ProfileCard user={ele} searchUserLevel="TRAINER" key={i} eleIndex={i}/>
+                     <ProfileCard user={ele} searchUserLevel="TRAINER"  eleIndex={i}/>
                 </div>
             </div>
         );

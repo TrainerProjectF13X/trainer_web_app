@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from .models import TrainerAccount, RegularAccount
 from django.contrib.auth import authenticate, login, logout
 from django.core.exceptions import ObjectDoesNotExist
-from .api.serializer import TrainerSerialzer, RegularSerialzer
+from .api.serializer import TrainerSerializer, RegularSerializer
 from rest_framework.renderers import JSONRenderer
 # Create your views here.
 

@@ -31,7 +31,7 @@ export default class Content extends React.Component {
       }
       else if (this.props.curContent === "My Trainees"){
          var clients = this.props.curUser.clients;
-         display = <CurrentTrainees curClients={clients} pollInterval={6000}/>;
+         display = <CurrentTrainees curClients={clients} pollInterval={4000}/>;
       }
       else if(this.props.curContent === "Calendar"){
          display = <Calendar />;
@@ -39,7 +39,7 @@ export default class Content extends React.Component {
       else if(this.props.curContent === "Saved Workouts"){
          display = <Workouts  />;
       }
-      else if(this.props.curContent === "Trainee Nearby" || this.props.curContent === "Trainers Nearby"){
+      else if(this.props.curContent === "Trainees Nearby" || this.props.curContent === "Trainers Nearby"){
          display = <Finder userLevel={this.props.curUser.level} />;
       }
       else if(this.props.curContent === "Progress"){

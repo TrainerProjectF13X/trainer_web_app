@@ -188,19 +188,19 @@ ul.side-nav.fixed li.logo {
 }
 
 // CALENDAR
-@light-gray: #ebebeb;
+@light-gray: #ffffff;
 @dark-gray: #414141;
-@dark-blue: #3883a3;
-@blue: #71bbd2;
+@dark-blue: #757575;
+@blue: #ff9800;
 
 #full-clndr
 {
   width: 100%;
   background-color: @light-gray;
-  font-weight: 700;
-  -moz-box-shadow: 0px 4px 0 darken(@dark-gray, 5%);
-  -webkit-box-shadow: 0px 4px 0 darken(@dark-gray, 5%);
-  box-shadow: 0px 4px 0 darken(@dark-gray, 5%);
+  //font-weight: 700;
+  // -moz-box-shadow: 0px 4px 0 darken(@dark-gray, 5%);
+  // -webkit-box-shadow: 0px 4px 0 darken(@dark-gray, 5%);
+  // box-shadow: 0px 4px 0 darken(@dark-gray, 5%);
 
   .clndr-controls
   {
@@ -208,6 +208,7 @@ ul.side-nav.fixed li.logo {
     background-color: @dark-gray;
     color: white;
     text-align: center;
+	overflow: hidden;
 
     .clndr-previous-button
     {
@@ -238,6 +239,7 @@ ul.side-nav.fixed li.logo {
     float: left;
     width: 65%;
     border-right: 2px solid white;
+	height:auto;
 
     .days-of-the-week
     {
@@ -262,15 +264,15 @@ ul.side-nav.fixed li.logo {
       {
         float: left;
         width: 14.2857%;
-        height: 66px;
-        padding: 24px 0;
+        height: 50px;
+        padding: 20px 0;
 
         text-align: center;
         color: #4f4f4f;
         background-color: @light-gray;
-        border-bottom: 2px solid white;
+        border-bottom: 2px solid #efefef;
 
-        background-image: url('./triangle.svg');
+        // background-image: url('./triangle.svg');
         background-size: cover;
         background-position: center;
 
@@ -294,7 +296,7 @@ ul.side-nav.fixed li.logo {
 
       .today
       {
-        background-color: white;
+        background-color: #efefef;
         background-image: none;
       }
 
@@ -305,6 +307,7 @@ ul.side-nav.fixed li.logo {
   {
     float: left;
     width: 35%;
+	max-height: 350px;
 
     .event-listing-title
     {
@@ -314,15 +317,22 @@ ul.side-nav.fixed li.logo {
       color: white;
       letter-spacing: 1px;
     }
-    .event-item
-    {
-      padding: 14px;
-      color: #4f4f4f;
-    }
-    .event-item-location
-    {
-      font-weight: 400;
-    }
+
+	.event-container{
+		overflow-y: scroll;
+		max-height: 300px;
+
+		.event-item
+	    {
+	      padding: 14px;
+	      color: #4f4f4f;
+	    }
+	    .event-item-location
+	    {
+	      font-weight: 400;
+	    }
+	}
+
   }
 }
 
@@ -343,6 +353,79 @@ html[xmlns] .clearfix {
     display: block;
 }
 
-* html .clearfix {
-    height: 1%;
+// * html .clearfix {
+//     height: 1%;
+// }
+#full-clndr.card-panel{
+	padding: 0;
+	margin: 0;
+}
+
+.checkbox-orange[type="checkbox"].filled-in:checked + label:after{
+     border: 2px solid #ff9800;
+     background-color: #ff9800;
+}
+.calendar_controls {
+	.card-panel {
+		margin:0;
+	}
+}
+
+
+
+// profile
+.task-cat {
+    padding: 2px 4px;
+    color: #fff;
+    font-weight: 300;
+    font-size: 0.8rem;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-clip: padding-box;
+}
+
+
+//main index page
+.home {
+	a.btn-floating {
+	    background-color: #ff9800;
+	    font-size: 1.25em;
+	    top: -30px;
+	}
+
+}
+
+section#how_it_works .tabs {
+	background-color: transparent;
+	margin-bottom: 50px;
+}
+
+section#how_it_works .tabs .indicator {
+    background-color: #ff9800;
+    height: 5px;
+}
+.tabs .indicator {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    background-color: #ff9800;
+    will-change: left, right;
+}
+
+.parallax-container {
+	height: auto;
+}
+
+.entry {
+	input {
+	text-align: center;
+	}
+
+	input:focus {
+	  border-bottom: 1px solid orange;
+	  -webkit-box-shadow: 0 1px 0 0 orange;
+	  -moz-box-shadow: 0 1px 0 0 orange;
+	  box-shadow: 0 1px 0 0 orange;
+	}
 }

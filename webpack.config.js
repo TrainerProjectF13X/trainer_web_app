@@ -28,7 +28,9 @@ module.exports = {
          'window.jQuery': 'jquery',
          _: 'underscore',
          moment: 'moment',
-         clndr: 'clndr'
+         fullCalendar: 'fullcalendar',
+         clndr: 'clndr',
+         react_big_calendar: 'react-big-calendar'
       })
    ],
 
@@ -45,7 +47,7 @@ module.exports = {
                 loader: 'babel-loader',
                 query: {
                     //specify that we will be dealing with React code
-                    presets: ['react','es2015']
+                    presets: ['react','es2015',"stage-0"]
                 }
             },
             // Loader for images

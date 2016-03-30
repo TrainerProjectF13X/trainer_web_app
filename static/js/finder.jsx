@@ -14,10 +14,10 @@ export default class Finder extends React.Component {
       super(props);
       this.state ={searchResultData : []};
    }
-   clearSearchResultData(){
+   clearSearchResultData = () =>{
       this.setState({searchResultData : []});
    }
-   searchForUser(searchString){
+   searchForUser = (searchString) =>{
       let searchQuery = this.props.userLevel === "TRAINER" ? "TRAINEE": "TRAINEER";
       $.ajax
       ({
@@ -39,7 +39,7 @@ export default class Finder extends React.Component {
       return (
          <div className="container">
             <h2 className="center light">Search for {word}</h2>
-            <SearchBar onUserInput={this.searchForUser.bind(this)}  resetScreen={this.clearSearchResultData.bind(this)} />
+            <SearchBar onUserInput={this.searchForUser}  resetScreen={this.clearSearchResultData} />
             <SearchResults searchResult={this.state.searchResultData} searchUserLevel={this.props.userLevel}/>
          </div>
       );

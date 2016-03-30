@@ -7,7 +7,7 @@ export default class SearchResults extends React.Component {
    constructor(props) {
       super(props);
    }
-   addPotentialClient(userName){
+   addPotentialClient = (userName) =>{
       $.ajax
       ({
          type : "POST",
@@ -20,7 +20,7 @@ export default class SearchResults extends React.Component {
          success : function(){
             let removeVar = "#" + userName+"_card";
             $(removeVar).fadeOut(750, function(){
-                $(this).remove();
+               $(this).remove();
             });
          }.bind(this),
          error: function(xhr, status, err) {
@@ -30,19 +30,21 @@ export default class SearchResults extends React.Component {
    }
    render(){
       console.log(this.props.searchResult);
-      var content =  this.props.searchResult.map(function(ele, i){
-         let boundClick = this.addPotentialClient.bind(this, ele.user.username);
+      let content =  this.props.searchResult.map((ele, i) => {
          let card_id = ele.user.username + "_card";
          return(
             <div className="col s12 m6 l4" key={i} id={card_id}>
-                <div className="card hoverable">
-                <ProfileCard user={ele} eleIndex ={i} searchUserLevel={this.props.searchUserLevel}/>
-                <div className="card-action">
-                <button className="btn waves-effect waves-light orange" type="submit" name="action" onClick={boundClick} >Add<i className="material-icons right">add</i></button>
-                </div>
-                </div>
-            </div>);
-      },this);
+               <div className="card hoverable">
+                  <ProfileCard user={ele} eleIndex ={i} searchUserLevel={this.props.searchUserLevel}/>
+                  <div className="card-action">
+                     <button className="btn waves-effect waves-light orange"
+                             type="submit" name="action" onClick={ () => {this.addPotentialClient(ele.user.username)} } >
+                        Add<i className="material-icons right">add</i>
+                     </button>
+               </div>
+            </div>
+         </div>);
+      });
       return (
          <div className="row">
             {content}
