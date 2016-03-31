@@ -20,7 +20,9 @@ export default class Content extends React.Component {
    constructor(props) {    /* Note props is passed into the constructor in order to be used */
       super(props);
 
+
    }
+
 
    render(){
       var display;
@@ -35,7 +37,7 @@ export default class Content extends React.Component {
          display = <Calendar />;
       }
       else if(this.props.curContent === "Saved Workouts"){
-         display = <Workouts />;
+         display = <Workouts  />;
       }
       else if(this.props.curContent === "Trainees Nearby" || this.props.curContent === "Trainers Nearby"){
          display = <Finder userLevel={this.props.curUser.level} />;
