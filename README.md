@@ -1,6 +1,6 @@
 #General
 
-  1. The first part of readme covers how to [set up the Django](djangosetup) virtual environment and local host
+  1. The first part of readme covers how to [set up the Django](#djangosetup) virtual environment and local host
   2. The second part of the readme goes into detail on how to [configure the webpack](Webpack compiler configuration (via npm)) to compile JSX files (for React)
   3. The third part describes some [configuration errors](Possible configuration errors) one might encounter
   4. The last part is a [API cheatsheet](API Guidelines for Front-End folks) 
