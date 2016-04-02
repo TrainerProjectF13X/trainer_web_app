@@ -6,7 +6,7 @@
   4. The last part is a [API cheatsheet](API Guidelines for Front-End folks) 
 
 =====================================================================================================
-#<a name="djangosetup">Running the virtual environment/local server</a>
+#<a name="djangosetup"></a>Running the virtual environment/local server
 
 ###Set up Django
 
