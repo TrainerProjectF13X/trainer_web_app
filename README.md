@@ -1,9 +1,8 @@
 #General
 
   1. The first part of readme covers how to [set up the Django](#djangosetup) virtual environment and local host
-  2. The second part of the readme goes into detail on how to [configure the webpack](Webpack compiler configuration (via npm)) to compile JSX files (for React)
-  3. The third part describes some [configuration errors](Possible configuration errors) one might encounter
-  4. The last part is a [API cheatsheet](API Guidelines for Front-End folks) 
+  2. The second part of the readme goes into detail on how to [configure the webpack](#webpack) The third part describes some [configuration errors](#errors) one might encounter
+  4. The last part is a [API cheatsheet](#api)
 
 =====================================================================================================
 #<a name="djangosetup"></a>Running the virtual environment/local server
@@ -73,7 +72,7 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 ======================================================================
 
-#Webpack compiler configuration (via npm)
+#<a name=webpack"></a>Webpack compiler configuration (via npm)
 
   Deactivate the VirtualEnv if you are inside virtualenv
 
@@ -104,7 +103,7 @@ https://github.com/TrainerProjectF13X/trainer_web_app.git
 
 ===============================================================================================
 
-#Possible configuration errors
+#<a name="errors"></a>Possible configuration errors
 
 ###If you get and error like this run the following command 
 
@@ -131,7 +130,7 @@ python manage.py loaddata data_dump.json
 
 =============================================================================
 
-#API Guidelines for Front-End folks
+#<a name="api"></a>API Guidelines for Front-End folks
     ###notes
 
     * Assuming authenticated for right now
