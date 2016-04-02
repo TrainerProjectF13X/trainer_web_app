@@ -128,3 +128,29 @@ If you add any please update the file accordingly.
 
 
 python manage.py loaddata data_dump.json
+
+=============================================================================
+
+#API Guidelines for Front-End folks
+    ###notes
+
+    * Assuming authenticated for right now
+    * Post request to come
+
+1. Get user related information 
+-----
+Get Request to /api/get_user
+
+Sample Response
+
+{"id": 1, "level": "TRAINER", "auth_token": "10d89d4cabf1a5eb983ef8a90ef48c23971fc9d40ffe9acfad07d357", "user": {"email": "cdzengpeiyun@gmail.com", "username": "ss", "first_name": "ss", "last_name": "ss"}, "clients": [{"user": {"email": "thecogle@gmail.com", "username": "Cogle", "first_name": "Christopher", "last_name": "Ogle"}, "profile": "User Profile", "goal": "Goal", "profile_pic": null}], "past_experience": "Past Experience", "profile_pic": null}
+
+
+
+2. Get workouts info
+----
+Get Reqeust to workout_api/get_userwithworkouts
+
+Sample Response
+
+{"user": {"email": "cdzengpeiyun@gmail.com", "username": "ss", "first_name": "ss", "last_name": "ss"}, "workouts": [{"overview": "Crazy Workout", "activities": []}, {"overview": "Standard Workout", "activities": [{"name": "Cardial Burning", "detail": "run for 100 miles"}, {"name": "Weight Lifting", "detail": "Do you even Lift?"}]}]}
