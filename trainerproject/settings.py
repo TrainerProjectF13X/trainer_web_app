@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'workouts',
     'rest_framework',
     'webpack_loader',
 ]
@@ -91,10 +92,13 @@ DATABASES = {
         'NAME': os.environ.get('DATABASE_NAME'),
         'USER': os.environ.get('DATABASE_USER_NAME'),
         'PASSWORD': os.environ.get('DATABASE_USER_PASSWORD'),
-        'HOST': 'localhost',
-        'PORT': '5431',
+
+        'HOST': '',
+        'PORT': '',
     }
 }
+
+
 
 
 # Password validation
