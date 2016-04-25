@@ -145,6 +145,7 @@ export default class Profile extends React.Component {
                         <p>{sentRequestContent}</p>
                     </div>
                 </div>
+
              </div>
          </footer>
          </div>

@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 var _ = require('underscore');
 var clndr = require('clndr');
 var moment = require('moment');
-
+var myCalendar;
 export default class Calendar extends React.Component {
    constructor(props) {    /* Note props is passed into the constructor in order to be used */
       super(props);
@@ -14,15 +14,16 @@ export default class Calendar extends React.Component {
    };
    componentDidMount(){
        $('ul.tabs').tabs();
-
+       $('.modal-trigger').leanModal();
+       $('.event_submit').click(function(){
+           //events.push({date:$('#a4').val(),title:$('#a1').val(),location:$('#a2').val()});
+           myCalendar.addEvents([{date:$('#a4').val(),title:$('#a1').val(),location:$('#a2').val()}]);
+       });
        var currentMonth = moment().format('YYYY-MM');
        var nextMonth    = moment().add(1, 'month').format('YYYY-MM');
        var events = [
-         { date: currentMonth + '-' + '10', title: 'Spring Group Workout', location: 'West Hall' },
-         { date: currentMonth + '-' + '19', title: 'Private: John Doe', location: 'Main Fitness Room' },
-         { date: currentMonth + '-' + '23', title: 'Private: Chris Ogle', location: 'Main Fitness Room' },
-         { date: currentMonth + '-' + '30', title: 'Private: Chris Ogle', location: 'Main Fitness Room' },
-         { date: nextMonth + '-' + '07',    title: 'Trainers Group', location: 'Meeting Room' }
+         { date: currentMonth + '-' + '15', title: 'Todo:', location: 'Run 10K in Forest Park within 50 mins!' },
+         { date: nextMonth + '-' + '9', title: 'Todo:', location: '6 sets bench press at 200lbs!' }
        ];
        _.templateSettings = {
              escape: /\{\{\-(.+?)\}\}/g,
@@ -30,7 +31,7 @@ export default class Calendar extends React.Component {
              interpolate: /\{\{\=(.+?)\}\}/g,
         };
 
-       var myCalendar = $('#full-clndr').clndr({
+       myCalendar = $('#full-clndr').clndr({
            template: $('#full-clndr-template').html(),
            events: events,
            forceSixRows: true,
@@ -125,6 +126,41 @@ export default class Calendar extends React.Component {
 
                     </div>
                 </script>
+
+
+
+                <div className="fixed-action-btn horizontal">
+
+                    <a className="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modal1"><i
+                        className="material-icons">add</i></a>
+                </div>
+                <div id="modal1" className="modal">
+                    <div className="modal-content container">
+                        <h5 className="center">{"Add a new event"}</h5>
+                        <div className="divider"></div>
+                        <div className="row">
+                            <form className="col s12">
+                                <div className="row">
+                                    <div className="input-field col s12">
+                                        <input id="a1" type="text" className="validate"/>
+                                        <label htmlFor="a1">Name</label>
+                                    </div>
+                                    <div className="input-field col s12">
+                                        <input id="a2" type="text" className="validate"/>
+                                        <label htmlFor="a2">Description</label>
+                                    </div>
+                                    <div className="input-field col s12">
+                                        <input id="a4" type="date" className="validate"/>
+                                    </div>
+
+                                    <a className="waves-effect waves-light btn orange event_submit">Add</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div className="modal-footer">
+                        </div>
+                    </div>
+                </div>
             </div>
           );
         }

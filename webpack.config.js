@@ -30,7 +30,8 @@ module.exports = {
          moment: 'moment',
          fullCalendar: 'fullcalendar',
          clndr: 'clndr',
-         react_big_calendar: 'react-big-calendar'
+         react_big_calendar: 'react-big-calendar',
+         chartist: 'chartist'
       })
    ],
 
